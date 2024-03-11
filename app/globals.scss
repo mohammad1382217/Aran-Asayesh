@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "font";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-Estedad-FD !important;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box !important;
+}
+
+.ant-select-selection-placeholder {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.rmdp-container {
+  width: 100% !important;
+}
+
+body {
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.5rem;
+}
+
+label {
+  padding: 0 !important;
+}
