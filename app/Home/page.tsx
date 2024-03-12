@@ -10,7 +10,7 @@ import "./style.css";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col w-[100vw] mt-40 justify-center ">
+    <div className="flex flex-col mt-40 justify-center ">
       <div className="  flex justify-center">
         <img src={ImageHomeHeaderRight} className="w-2/4 rounded-t-lg" alt="" />
         <div className="flex flex-col w-1/4">
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
           />
         </div>
       </div>
-      <div className="bg-[#F5F5F5] w-[100vw] mt-3  flex justify-center">
+      <div className="bg-[#F5F5F5] mt-3 flex justify-center">
         <div className="mt-10 w-9/12">
           <LineSpace
             color={`#8754AF`}
