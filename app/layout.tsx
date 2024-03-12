@@ -25,8 +25,8 @@ const LINKS = [
 
 export const FooterWithSocialLinks = () => {
   return (
-    <footer className="relative w-full">
-      <div className="mx-auto w-full max-w-7xl px-8">
+    <footer className="relative w-[100vw]">
+      <div className="w-full max-w-7xl px-8 mx-auto">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <div className="flex flex-col items-center justify-center gap-2">
             <div className="flex items-center justify-center gap-2">
@@ -69,8 +69,9 @@ export const FooterWithSocialLinks = () => {
             ))}
           </div>
         </div>
-        <div className="container bg-[#D9D9D9]">
-          <div className="mt-12 flex container flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
+      </div>
+        <div className="bg-[#D9D9D9]">
+        <div className="mt-10 flex flex-col items-center justify-center py-4 md:flex-row md:justify-between max-w-7xl">
             <Typography
               variant="small"
               className="mb-4 text-center font-normal text-[#717171] md:mb-0"
@@ -103,7 +104,6 @@ export const FooterWithSocialLinks = () => {
             </div>
           </div>
         </div>
-      </div>
     </footer>
   );
 };
@@ -112,9 +112,8 @@ const RootLayout: React.FC = () => {
   return (
     <>
       <ScrollRestoration />
-      <section className="container min-h-screen mx-auto">
-        <header className="container flex bg-white">
-          <nav className="flex flex-[1_0_0] flex-wrap lg:px-3 items-center justify-between px-10 py-2 lg:py-4">
+        <header className="flex items-center justify-center bg-white">
+          <nav className="max-w-6xl flex flex-[1_0_0] flex-wrap lg:px-3 items-center justify-between px-10 py-2 lg:py-4">
             <div className=" flex items-center justify-center gap-2">
               <img width={79} height={102} src={logo} alt="AranAsayesh" />
               <span className="text-3xl font-semibold text-[#8754AF]">
@@ -143,10 +142,7 @@ const RootLayout: React.FC = () => {
           <Outlet />
         </main>
 
-        <footer className="container flex justify-between">
-          <FooterWithSocialLinks />
-        </footer>
-      </section>
+        <FooterWithSocialLinks />
     </>
   );
 };
