@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./assets/logo-orginal.svg";
-import { FaGift } from "react-icons/fa";
+import { FaGift, FaDownload } from "react-icons/fa";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 
 const RootLayout: React.FC = () => {
@@ -16,11 +16,20 @@ const RootLayout: React.FC = () => {
                 آران آسایش
               </span>
             </div>
-            <div className=" flex items-center justify-center gap-2">
-              <span className="text-lg font-semibold text-[#8754AF]">
-                خرید گیفت کارد
-              </span>
-              <FaGift className="text-[#8754AF] w-6 h-6" />
+            <div className="flex items-center justify-center gap-4">
+              <div className="flex items-center justify-center gap-2">
+                <span className="text-lg font-semibold text-[#8754AF]">
+                  خرید گیفت کارد
+                </span>
+                <FaGift className="text-[#8754AF] w-6 h-6" />
+              </div>
+              <button className="px-3 py-1.5 rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] ">
+                ورود
+              </button>
+              <button className="flex items-center justify-center px-[30px] py-2.5 rounded-lg border-[#8754AF] text-lg font-semibold bg-[#8754AF] text-white gap-2">
+                دانلود اپلیکیشن
+                <FaDownload />
+              </button>
             </div>
           </nav>
         </header>
