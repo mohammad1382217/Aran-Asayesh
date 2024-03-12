@@ -10,7 +10,7 @@ import "./style.css";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col w-[100vw] mt-40 justify-center bg-slate-300">
+    <div className="flex flex-col w-[100vw] mt-40 justify-center ">
       <div className="  flex justify-center">
         <img src={ImageHomeHeaderRight} className="w-2/4 rounded-t-lg" alt="" />
         <div className="flex flex-col w-1/4">
@@ -26,8 +26,8 @@ const Home: React.FC = () => {
           />
         </div>
       </div>
-      <div className="bg-[#F5F5F5]  flex justify-center">
-        <div className="mt-10 w-8/12">
+      <div className="bg-[#F5F5F5] w-[100vw] mt-3  flex justify-center">
+        <div className="mt-10 w-9/12">
           <LineSpace
             color={`#8754AF`}
             text={"پیشنهادهای ویژه"}
@@ -44,10 +44,10 @@ const Home: React.FC = () => {
                 باغ رستوران بهشت
               </h5>
             </a>
-            <div className="mb-5 mt-2.5 mr-3 flex items-center">
+            <div className="mb-5 mt-2.5  flex items-center justify-center">
               <p>امتیاز :</p>
 
-              <span className="ml-2 mr-1 rounded  px-2.5 py-0.5 text-xs font-semibold text-cyan-800 dark:bg-cyan-200 dark:text-cyan-800">
+              <span className="ml-1 mr-1  text-xs font-semibold text-cyan-800 dark:bg-cyan-200 dark:text-cyan-800">
                 4.1
               </span>
               <svg
