@@ -11,7 +11,7 @@ import CardComponent from "../components/Card";
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col mt-10 justify-center ">
-      <div className="  flex justify-center">
+      <div className="flex justify-center">
         <img src={ImageHomeHeaderRight} className="w-2/4 rounded-t-lg" alt="" />
         <div className="flex flex-col w-1/4">
           <img
