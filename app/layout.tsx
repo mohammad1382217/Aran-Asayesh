@@ -807,7 +807,7 @@ const RootLayout: React.FC = () => {
         </div>
       </header>
 
-      <main className={`min-h-screen`}>
+      <main>
         <Outlet />
       </main>
 

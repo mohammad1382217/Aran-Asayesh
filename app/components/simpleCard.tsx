@@ -10,24 +10,28 @@ export const SimpleCard: React.FC<SimpleCardProps> = ({
   header,
   text,
   textButton,
+  cardClass,
+  ImageClass,
   Image,
+  price,
 }) => {
   return (
-    <Card className="relative mt-6 w-96" placeholder={undefined}>
-      <CardBody placeholder={undefined}>
-        <img className="absoloute" src={Image} alt="" />
+    <Card className={`relative mt-24 w-1/3 py-4 px-6 rounded-2xl border-4 border-white ${cardClass}`} placeholder={undefined}>
+      <CardBody placeholder={undefined} className="text-justify">
+        <img className={`absolute ${ImageClass}`} src={Image} alt="" />
         <Typography
           variant="h5"
-          color="blue-gray"
-          className="mb-2"
+          color="white"
+          className="mb-5"
           placeholder={undefined}
         >
           {header}
         </Typography>
-        <Typography placeholder={undefined}>{text}</Typography>
+        <Typography className="text-white" placeholder={undefined}>{text}</Typography>
       </CardBody>
-      <CardFooter className="pt-0" placeholder={undefined}>
-        <Button className="bg-white text-[#8754AF]" placeholder={undefined}>{textButton}</Button>
+      <CardFooter className="pt-0 flex items-center gap-10 text-white" placeholder={undefined}>
+        <Button className="bg-white text-[#8754AF] text-2xl py-2" placeholder={undefined}>{textButton}</Button>
+        <span>{price}</span>
       </CardFooter>
     </Card>
   );
@@ -35,8 +39,11 @@ export const SimpleCard: React.FC<SimpleCardProps> = ({
 
 // Types
 interface SimpleCardProps {
-  header: string;
+  header: React.ReactNode;
   text: string;
   textButton: string;
-  Image: string;
+  Image?: string;
+  cardClass?: string;
+  ImageClass?: string;
+  price?: string;
 }

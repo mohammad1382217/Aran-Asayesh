@@ -1,6 +1,12 @@
 @font-face {
-    font-family: 'YekanBakh';
-    src: url('../app/assets/font/YekanBakhFaNum-Regular.woff2') format('woff2');
+  font-family: "YekanBakh";
+  src: url("../app/assets/font/YekanBakhFaNum-Regular.woff2") format("woff2");
 }
 
-$font-family-YekanBakh:"YekanBakh";
+$font-family-YekanBakh: "YekanBakh";
+
+.roboto-regular-italic {
+  font-family: "Roboto" !important;
+  font-weight: 400;
+  font-style: italic;
+}
