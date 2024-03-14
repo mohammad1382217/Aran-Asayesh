@@ -1,12 +1,12 @@
+import "./Home.scss";
 import React from "react";
+import CardComponent from "../components/Card";
+import LineSpace from "../components/lineSpace";
+import foodpost from "../assets/images/foodpost.png";
+import ImageHomeHeaderLeft2 from "../assets/images/coffee.png";
 import ImageHomeHeaderRight from "../assets/images/coffee2.png";
 import ImageHomeHeaderLeft1 from "../assets/images/dentist.png";
-import ImageHomeHeaderLeft2 from "../assets/images/coffee.png";
 import presentage from "../assets/images/icons/percentage-square.svg";
-import foodpost from "../assets/images/foodpost.png";
-import LineSpace from "../components/lineSpace";
-import "./style.css";
-import CardComponent from "../components/Card";
 
 const Home: React.FC = () => {
   return (
@@ -33,7 +33,12 @@ const Home: React.FC = () => {
             text={"پیشنهادهای ویژه"}
             icon={<img className="w-7 h-7" src={presentage}></img>}
           />
-          <CardComponent text={'باغ رستوران بهشت'} rate={'4.0'} offer={["10%", "20%"]} img={foodpost} />
+          <CardComponent
+            text={"باغ رستوران بهشت"}
+            rate={"4.0"}
+            offer={["10%", "20%"]}
+            img={foodpost}
+          />
         </div>
       </div>
     </div>

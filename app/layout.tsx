@@ -35,7 +35,7 @@ const LINKS = [
     title: "بیشتر",
     items: [
       { item: "سؤالات متداول", link: "Questions" },
-      { item: "راهنمای خرید کارت", link: "Questions" },
+      { item: "راهنمای خرید کارت", link: "BuySubscription" },
       { item: "وبلاگ", link: "Questions" },
     ],
   },

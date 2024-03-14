@@ -5,6 +5,7 @@ import Login from "./login/page";
 import RootLayout from "./layout";
 import ReactDOM from "react-dom/client";
 import Questions from "./Questions/page";
+import BuySubscription from "./BuySubscription/page";
 import {
   Navigate,
   RouterProvider,
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "Questions",
         element: <Questions />,
+      },
+      {
+        path: "BuySubscription",
+        element: <BuySubscription />,
       },
     ],
   },
