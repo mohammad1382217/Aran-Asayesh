@@ -17,15 +17,27 @@ import qr_code from "./assets/mobile-client-qr-code-settings.svg";
 const LINKS = [
   {
     title: "همکاری با ما",
-    items: ["زیر مجموعه شدن", "تبلیغات", "خدمات ما"],
+    items: [
+      { item: "زیر مجموعه شدن", link: "" },
+      { item: "تبلیغات", link: "" },
+      { item: "خدمات ما", link: "" },
+    ],
   },
   {
     title: "ارتباط با ما",
-    items: ["درباره ما", "تاریخچه شرکت", "اهداف شرکت"],
+    items: [
+      { item: "درباره ما", link: "Questions" },
+      { item: "تاریخچه شرکت", link: "Questions" },
+      { item: "اهداف شرکت", link: "Questions" },
+    ],
   },
   {
     title: "بیشتر",
-    items: ["سؤالات متداول", "راهنمای خرید کارت", "وبلاگ"],
+    items: [
+      { item: "سؤالات متداول", link: "Questions" },
+      { item: "راهنمای خرید کارت", link: "Questions" },
+      { item: "وبلاگ", link: "Questions" },
+    ],
   },
 ];
 
@@ -120,15 +132,15 @@ export const FooterWithSocialLinks = () => {
                   {title}
                 </Typography>
                 {items.map((link) => (
-                  <li key={link}>
+                  <li key={link.item}>
                     <Typography
                       as="a"
-                      href="#"
+                      href={link.link}
                       color="gray"
                       className="py-1.5 text-lg font-normal transition-colors hover:text-blue-gray-900"
                       placeholder={undefined}
                     >
-                      {link}
+                      {link.item}
                     </Typography>
                   </li>
                 ))}
@@ -213,7 +225,7 @@ const RootLayout: React.FC = () => {
   return (
     <>
       <ScrollRestoration />
-      <header className="flex flex-col items-center justify-center bg-white">
+      <header className="flex flex-col items-center justify-center">
         <nav className="w-full max-w-7xl flex flex-[1_0_0] flex-wrap items-center justify-between py-2 lg:py-4">
           <div className="flex items-center justify-center gap-2">
             <img width={79} height={102} src={logo} alt="AranAsayesh" />
