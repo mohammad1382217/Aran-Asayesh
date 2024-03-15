@@ -1,5 +1,4 @@
 import React from "react";
-// import ImageIcon from "./path/to/icon.png";
 
 interface LineSpaceProps {
   text: string;

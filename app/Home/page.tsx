@@ -1,7 +1,8 @@
+import "./Home.scss";
 import React from "react";
+import ImageHomeHeaderLeft2 from "../assets/images/coffee.png";
 import ImageHomeHeaderRight from "../assets/images/coffee2.png";
 import ImageHomeHeaderLeft1 from "../assets/images/dentist.png";
-import ImageHomeHeaderLeft2 from "../assets/images/coffee.png";
 import presentage from "../assets/images/icons/percentage-square.svg";
 import foodIcon from "../assets/images/icons/hamperger.png";
 import foodpost from "../assets/images/foodpost.png";
@@ -29,6 +30,18 @@ const Home: React.FC = () => {
             className="w-6/12 md:w-full rounded-t-lg"
             alt=""
           />
+          <div className="flex flex-col w-1/3">
+            <img
+              src={ImageHomeHeaderLeft1}
+              className="w-full rounded-t-lg"
+              alt=""
+            />
+            <img
+              src={ImageHomeHeaderLeft2}
+              className="w-full rounded-t-lg"
+              alt=""
+            />
+          </div>
         </div>
         {/* </div> */}
       </div>
@@ -128,6 +141,27 @@ const Home: React.FC = () => {
         </div>
         </div>
     </div>
+          // <div className="grid items-center justify-between grid-cols-3">
+          //   <CardComponent
+          //     text={"باغ رستوران بهشت"}
+          //     rate={"4.0"}
+          //     offer={["10%", "20%"]}
+          //     img={foodpost}
+          //   />
+          //   <CardComponent
+          //     text={"باغ رستوران بهشت"}
+          //     rate={"4.0"}
+          //     offer={["10%", "20%"]}
+          //     img={foodpost}
+          //   />
+          //   <CardComponent
+          //     text={"باغ رستوران بهشت"}
+          //     rate={"4.0"}
+          //     offer={["10%", "20%"]}
+          //     img={foodpost}
+          //   />
+          // </div>
+        
   );
 };
 export default Home;

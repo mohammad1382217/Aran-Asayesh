@@ -1,16 +1,20 @@
 import "./globals.scss";
 import React from "react";
+import Home from "./Home/page";
+import Login from "./login/page";
 import RootLayout from "./layout";
-
+import AboutUs from "./AboutUs/page";
+import OurGoals from "./OurGoals/page";
+import Services from "./Services/page";
 import ReactDOM from "react-dom/client";
-
+import Questions from "./Questions/page";
+import Application from "./Application/page";
+import BuySubscription from "./BuySubscription/page";
 import {
   Navigate,
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import Login from "./login/page";
-import Home from "./Home/page";
 
 const router = createBrowserRouter([
   {
@@ -22,14 +26,38 @@ const router = createBrowserRouter([
         element: <Navigate to={"login"} replace={true} />,
       },
       {
-        path: "login",
-        element: <Login/>,
+        path: "Home",
+        element: <Home />,
       },
       {
-        path: "Home",
-        element: <Home/>,
+        path: "Questions",
+        element: <Questions />,
+      },
+      {
+        path: "BuySubscription",
+        element: <BuySubscription />,
+      },
+      {
+        path: "AboutUs",
+        element: <AboutUs />,
+      },
+      {
+        path: "OurGoals",
+        element: <OurGoals />,
+      },
+      {
+        path: "Services",
+        element: <Services />,
+      },
+      {
+        path: "Application",
+        element: <Application />,
       },
     ],
+  },
+  {
+    path: "login",
+    element: <Login />,
   },
 ]);
 
