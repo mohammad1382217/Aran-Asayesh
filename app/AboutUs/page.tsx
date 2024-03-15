@@ -12,7 +12,7 @@ const AboutUs = () => {
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center">
                 <div className="flex flex-col">
-                  <h1 className="text-6xl text-[#7F38B7] font-semibold p-6">
+                  <h1 className="text-6xl text-[#7F38B7] font-semibold py-9">
                     درباره ما
                   </h1>
                   <div className="flex justify-center">
@@ -34,7 +34,7 @@ const AboutUs = () => {
                       />
                     </div>
                   </div>
-                  <p className="text-lg text-justify font-semibold p-4">
+                  <p className="text-lg text-justify font-semibold py-7">
                     مجوعه آران آسایش آفرینان متشکل از جمعی از پزشکان و اساتید
                     دانشگاه و صاحبان کسب و کار از سال 1397 با مدیریت آقای
                     محمدرضا مرادی مشغول فعالیت است. این مجموعه با راه‌اندازی

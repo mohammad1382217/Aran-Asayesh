@@ -27,8 +27,8 @@ const LINKS = [
     title: "ارتباط با ما",
     items: [
       { item: "درباره ما", link: "AboutUs" },
-      { item: "تاریخچه شرکت", link: "AboutUs" },
-      { item: "اهداف شرکت", link: "AboutUs" },
+      { item: "تاریخچه شرکت", link: "OurGoals" },
+      { item: "اهداف شرکت", link: "OurGoals" },
     ],
   },
   {
@@ -36,7 +36,7 @@ const LINKS = [
     items: [
       { item: "سؤالات متداول", link: "Questions" },
       { item: "راهنمای خرید کارت", link: "BuySubscription" },
-      { item: "وبلاگ", link: "AboutUs" },
+      { item: "وبلاگ", link: "OurGoals" },
     ],
   },
 ];
