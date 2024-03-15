@@ -10,20 +10,26 @@ import presentage from "../assets/images/icons/percentage-square.svg";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col mt-10 justify-center ">
-      <div className="flex justify-center">
-        <img src={ImageHomeHeaderRight} className="w-2/4 rounded-t-lg" alt="" />
-        <div className="flex flex-col w-1/4">
+    <>
+      <div className="flex flex-col mt-10 justify-center max-w-7xl mx-auto">
+        <div className="flex justify-center">
           <img
-            src={ImageHomeHeaderLeft1}
-            className="w-full rounded-t-lg"
+            src={ImageHomeHeaderRight}
+            className="w-2/3 rounded-t-lg"
             alt=""
           />
-          <img
-            src={ImageHomeHeaderLeft2}
-            className="w-full rounded-t-lg"
-            alt=""
-          />
+          <div className="flex flex-col w-1/3">
+            <img
+              src={ImageHomeHeaderLeft1}
+              className="w-full rounded-t-lg"
+              alt=""
+            />
+            <img
+              src={ImageHomeHeaderLeft2}
+              className="w-full rounded-t-lg"
+              alt=""
+            />
+          </div>
         </div>
       </div>
       <div className="bg-[#F5F5F5] mt-3 flex justify-center">
@@ -33,15 +39,29 @@ const Home: React.FC = () => {
             text={"پیشنهادهای ویژه"}
             icon={<img className="w-7 h-7" src={presentage}></img>}
           />
-          <CardComponent
-            text={"باغ رستوران بهشت"}
-            rate={"4.0"}
-            offer={["10%", "20%"]}
-            img={foodpost}
-          />
+          <div className="grid items-center justify-between grid-cols-3">
+            <CardComponent
+              text={"باغ رستوران بهشت"}
+              rate={"4.0"}
+              offer={["10%", "20%"]}
+              img={foodpost}
+            />
+            <CardComponent
+              text={"باغ رستوران بهشت"}
+              rate={"4.0"}
+              offer={["10%", "20%"]}
+              img={foodpost}
+            />
+            <CardComponent
+              text={"باغ رستوران بهشت"}
+              rate={"4.0"}
+              offer={["10%", "20%"]}
+              img={foodpost}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default Home;

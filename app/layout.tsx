@@ -18,17 +18,17 @@ const LINKS = [
   {
     title: "همکاری با ما",
     items: [
-      { item: "زیر مجموعه شدن", link: "" },
-      { item: "تبلیغات", link: "" },
-      { item: "خدمات ما", link: "" },
+      { item: "زیر مجموعه شدن", link: "AboutUs" },
+      { item: "تبلیغات", link: "AboutUs" },
+      { item: "خدمات ما", link: "AboutUs" },
     ],
   },
   {
     title: "ارتباط با ما",
     items: [
-      { item: "درباره ما", link: "Questions" },
-      { item: "تاریخچه شرکت", link: "Questions" },
-      { item: "اهداف شرکت", link: "Questions" },
+      { item: "درباره ما", link: "AboutUs" },
+      { item: "تاریخچه شرکت", link: "AboutUs" },
+      { item: "اهداف شرکت", link: "AboutUs" },
     ],
   },
   {
@@ -36,7 +36,7 @@ const LINKS = [
     items: [
       { item: "سؤالات متداول", link: "Questions" },
       { item: "راهنمای خرید کارت", link: "BuySubscription" },
-      { item: "وبلاگ", link: "Questions" },
+      { item: "وبلاگ", link: "AboutUs" },
     ],
   },
 ];
