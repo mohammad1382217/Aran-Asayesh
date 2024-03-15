@@ -64,25 +64,25 @@ const Home: React.FC = () => {
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
           </div>
@@ -99,25 +99,25 @@ const Home: React.FC = () => {
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
           </div>
@@ -132,25 +132,25 @@ const Home: React.FC = () => {
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
           </div>
@@ -165,25 +165,25 @@ const Home: React.FC = () => {
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
           </div>
@@ -198,25 +198,25 @@ const Home: React.FC = () => {
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
           </div>
@@ -231,25 +231,25 @@ const Home: React.FC = () => {
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
           </div>
@@ -264,25 +264,25 @@ const Home: React.FC = () => {
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
             <CardComponent
               text={"باغ رستوران بهشت"}
               rate={"4.0"}
-              offer={["10%", "20%"]}
+              offer={"20%"}
               img={foodpost}
             />
           </div>
@@ -312,7 +312,7 @@ const Home: React.FC = () => {
                         placeholder={undefined}
                       >
                         <img src={bazar} className="w-8 h-8" />
-                        <p className="block antialiased text-gray-700 text-lg font-semibold transition-colors bg-transparent">
+                        <p className="block antialiased text-gray-700 text-base md:text-lg font-semibold transition-colors bg-transparent">
                           دانلود از کافه بازار
                         </p>
                       </Button>

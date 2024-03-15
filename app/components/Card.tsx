@@ -5,7 +5,7 @@ interface CardComponent {
   text: string;
   img: string;
   rate: string;
-  offer: string[];
+  offer: string;
 }
 
 const CardComponent: React.FC<CardComponent> = ({ text, img, rate, offer }) => {
@@ -23,7 +23,7 @@ const CardComponent: React.FC<CardComponent> = ({ text, img, rate, offer }) => {
         {text}
       </h5>
       {/* </a> */}
-      <div className="mb-5 mt-2.5  flex items-center justify-center">
+      <div className="ml-3 mb-5 w-[13rem] mt-2.5  flex items-center justify-between">
         <div className="flex">
           <p className="text-base font-extralight text-[#717171]">امتیاز:</p>
           <span className="ml-1 mr-1 text-base font-extralight text-[#717171]">
@@ -39,12 +39,12 @@ const CardComponent: React.FC<CardComponent> = ({ text, img, rate, offer }) => {
           </svg>
         </div>
         <span className="mr-2 text-sm md:text-base font-extralight text-[#717171]">
-          از{offer[0]} تا{" "}
           <span className="text-xs lg:text-base font-extralight text-[#717171]">
+             تا
             <span className="text-[#7F38B7] lg:text-lg text-xl font-semibold">
-              {offer[1]}
+              {offer}
             </span>{" "}
-            تخفیف{" "}
+            تخفیف {"  "}
           </span>
         </span>
       </div>
