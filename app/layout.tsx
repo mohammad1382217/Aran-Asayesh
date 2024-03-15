@@ -224,7 +224,6 @@ const RootLayout: React.FC = () => {
   const [openServicesMenu, setOpenServicesMenu] = React.useState(false);
   return (
     <>
-      <ScrollRestoration />
       <header className="flex flex-col items-center justify-center">
         <nav className="w-full max-w-7xl flex flex-[1_0_0] flex-wrap items-center justify-between py-2 lg:py-4">
           <div className="flex items-center justify-center gap-2">
@@ -243,7 +242,10 @@ const RootLayout: React.FC = () => {
             <Button className="px-2 py-[2px] rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white">
               ورود
             </Button>
-            <Button href="/Application" className="py-[2px] flex items-center justify-center px-[14px] rounded-lg border-[#8754AF] text-lg font-semibold bg-[#8754AF] hover:!bg-[#8754AF] text-white gap-2">
+            <Button
+              href="/Application"
+              className="py-[2px] flex items-center justify-center px-[14px] rounded-lg border-[#8754AF] text-lg font-semibold bg-[#8754AF] hover:!bg-[#8754AF] text-white gap-2"
+            >
               دانلود اپلیکیشن
               <HiDownload className="w-6 h-6" />
             </Button>
@@ -808,6 +810,7 @@ const RootLayout: React.FC = () => {
       </header>
 
       <main>
+        <ScrollRestoration />
         <Outlet />
       </main>
 
