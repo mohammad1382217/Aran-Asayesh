@@ -5,8 +5,10 @@ import Login from "./login/page";
 import RootLayout from "./layout";
 import AboutUs from "./AboutUs/page";
 import OurGoals from "./OurGoals/page";
+import Services from "./Services/page";
 import ReactDOM from "react-dom/client";
 import Questions from "./Questions/page";
+import Application from "./Application/page";
 import BuySubscription from "./BuySubscription/page";
 import {
   Navigate,
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: "OurGoals",
         element: <OurGoals />,
+      },
+      {
+        path: "Services",
+        element: <Services />,
+      },
+      {
+        path: "Application",
+        element: <Application />,
       },
     ],
   },

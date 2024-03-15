@@ -217,11 +217,11 @@ export const FooterWithSocialLinks = () => {
 
 const RootLayout: React.FC = () => {
   const [openRestaurant, setOpenRestaurant] = React.useState(false);
-  const [openR, setOpenR] = React.useState(false);
-  const [openRe, setOpenRe] = React.useState(false);
-  const [openRes, setOpenRes] = React.useState(false);
-  const [openRest, setOpenRest] = React.useState(false);
-  const [openResta, setOpenResta] = React.useState(false);
+  const [openFunMenu, setFunMenu] = React.useState(false);
+  const [openMedicalMenu, setOpenMedicalMenu] = React.useState(false);
+  const [openArtMenu, setOpenArtMenu] = React.useState(false);
+  const [openBeautyMenu, setOpenBeautyMenu] = React.useState(false);
+  const [openServicesMenu, setOpenServicesMenu] = React.useState(false);
   return (
     <>
       <ScrollRestoration />
@@ -240,13 +240,13 @@ const RootLayout: React.FC = () => {
               </span>
               <Gift />
             </div>
-            <button className="px-3 py-1.5 rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] ">
+            <Button className="px-2 py-[2px] rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white">
               ورود
-            </button>
-            <button className="flex items-center justify-center px-[30px] py-2.5 rounded-lg border-[#8754AF] text-lg font-semibold bg-[#8754AF] text-white gap-2">
+            </Button>
+            <Button href="/Application" className="py-[2px] flex items-center justify-center px-[14px] rounded-lg border-[#8754AF] text-lg font-semibold bg-[#8754AF] hover:!bg-[#8754AF] text-white gap-2">
               دانلود اپلیکیشن
               <HiDownload className="w-6 h-6" />
-            </button>
+            </Button>
           </div>
         </nav>
         <div className="w-full flex items-center justify-center bg-[#ECECEC] py-4">
@@ -349,8 +349,8 @@ const RootLayout: React.FC = () => {
               </div>
               <div>
                 <button
-                  onMouseEnter={() => setOpenR(true)}
-                  onMouseLeave={() => setOpenR(false)}
+                  onMouseEnter={() => setFunMenu(true)}
+                  onMouseLeave={() => setFunMenu(false)}
                   id="dropdownNavbarLink"
                   data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
@@ -375,7 +375,7 @@ const RootLayout: React.FC = () => {
                 <div
                   id="dropdownNavbar"
                   className={`z-30 ${
-                    openR ? "block" : "hidden"
+                    openFunMenu ? "block" : "hidden"
                   } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
                 >
                   <div
@@ -428,8 +428,8 @@ const RootLayout: React.FC = () => {
               </div>
               <div>
                 <button
-                  onMouseEnter={() => setOpenRe(true)}
-                  onMouseLeave={() => setOpenRe(false)}
+                  onMouseEnter={() => setOpenMedicalMenu(true)}
+                  onMouseLeave={() => setOpenMedicalMenu(false)}
                   id="dropdownNavbarLink"
                   data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
@@ -454,7 +454,7 @@ const RootLayout: React.FC = () => {
                 <div
                   id="dropdownNavbar"
                   className={`z-30 ${
-                    openRe ? "block" : "hidden"
+                    openMedicalMenu ? "block" : "hidden"
                   } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
                 >
                   <div
@@ -531,8 +531,8 @@ const RootLayout: React.FC = () => {
               </div>
               <div>
                 <button
-                  onMouseEnter={() => setOpenRes(true)}
-                  onMouseLeave={() => setOpenRes(false)}
+                  onMouseEnter={() => setOpenArtMenu(true)}
+                  onMouseLeave={() => setOpenArtMenu(false)}
                   id="dropdownNavbarLink"
                   data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
@@ -557,7 +557,7 @@ const RootLayout: React.FC = () => {
                 <div
                   id="dropdownNavbar"
                   className={`z-30 ${
-                    openRes ? "block" : "hidden"
+                    openArtMenu ? "block" : "hidden"
                   } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
                 >
                   <div
@@ -594,8 +594,8 @@ const RootLayout: React.FC = () => {
               </div>
               <div>
                 <button
-                  onMouseEnter={() => setOpenRest(true)}
-                  onMouseLeave={() => setOpenRest(false)}
+                  onMouseEnter={() => setOpenBeautyMenu(true)}
+                  onMouseLeave={() => setOpenBeautyMenu(false)}
                   id="dropdownNavbarLink"
                   data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
@@ -620,7 +620,7 @@ const RootLayout: React.FC = () => {
                 <div
                   id="dropdownNavbar"
                   className={`z-30 ${
-                    openRest ? "block" : "hidden"
+                    openBeautyMenu ? "block" : "hidden"
                   } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
                 >
                   <div
@@ -697,8 +697,8 @@ const RootLayout: React.FC = () => {
               </div>
               <div>
                 <button
-                  onMouseEnter={() => setOpenResta(true)}
-                  onMouseLeave={() => setOpenResta(false)}
+                  onMouseEnter={() => setOpenServicesMenu(true)}
+                  onMouseLeave={() => setOpenServicesMenu(false)}
                   id="dropdownNavbarLink"
                   data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
@@ -723,7 +723,7 @@ const RootLayout: React.FC = () => {
                 <div
                   id="dropdownNavbar"
                   className={`z-30 ${
-                    openResta ? "block" : "hidden"
+                    openServicesMenu ? "block" : "hidden"
                   } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
                 >
                   <div
