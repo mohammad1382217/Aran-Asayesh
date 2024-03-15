@@ -20,39 +20,43 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col bg-[#F5F5F5] justify-center items-center">
       <div className="flex flex-col lg:w-9/12 w-11/12 md:flex-row  px-5">
-        {/* <div> */}
-        <img
-          src={ImageHomeHeaderRight}
-          className="md:w-8/12 rounded-t-lg"
-          alt=""
-        />
-        <div className="flex flex-row md:flex-col md:w-4/12">
+        <div className="flex">
           <img
-            src={ImageHomeHeaderLeft1}
-            className="w-6/12 md:w-full rounded-t-lg"
+            src={ImageHomeHeaderRight}
+            className="md:w-8/12 rounded-t-lg"
             alt=""
           />
-          <img
-            src={ImageHomeHeaderLeft2}
-            className="w-6/12 md:w-full rounded-t-lg"
-            alt=""
-          />
-          {/* <div className="flex flex-col w-1/3">
+          <div className="flex flex-row md:flex-col md:w-4/12">
             <img
               src={ImageHomeHeaderLeft1}
-              className="w-full rounded-t-lg"
+              className="w-6/12 md:w-full rounded-t-lg"
               alt=""
             />
             <img
               src={ImageHomeHeaderLeft2}
-              className="w-full rounded-t-lg"
+              className="w-6/12 md:w-full rounded-t-lg"
               alt=""
             />
-          </div> */}
+          </div>
         </div>
-        {/* </div> */}
       </div>
-
+      <div className="flex flex-row lg:w-9/12 w-11/12 justify-between px-5">
+        <img
+          src={ImageHomeHeaderLeft1}
+          className="w-4/12 rounded-t-lg"
+          alt=""
+        />
+        <img
+          src={ImageHomeHeaderLeft2}
+          className="w-4/12 rounded-t-lg"
+          alt=""
+        />
+        <img
+          src={ImageHomeHeaderLeft2}
+          className="w-4/12 rounded-t-lg"
+          alt=""
+        />
+      </div>
       <div className="bg-[#8448B2] w-full my-3 flex flex-col justify-center items-center">
         <div className="mt-10 lg:w-9/12 w-11/12 ">
           <LineSpace
@@ -311,24 +315,24 @@ const Home: React.FC = () => {
             alt=""
           />
           <div className="my-10 md:flex flex-col hidden md:flex md:justify-center md:flex-col  md:order-3">
-          <Button
-                className="flex  bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.3rem] py-[0.8rem] items-center justify-center"
-                placeholder={undefined}
-              >
-                <HiDownload className="w-6 h-6 text-[#7F38B7]" />
-                <p className="block antialiased text-gray-700 text-base md:text-base font-semibold transition-colors bg-transparent">
-                  دانلود مستقیم
-                </p>
-              </Button>
-              <Button
-                className="flex mt-5 bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.3rem] py-[0.8rem] items-center justify-center"
-                placeholder={undefined}
-              >
-                <img src={bazar} className="w-8 h-8" />
-                <p className="block antialiased text-gray-700 text-base md:text-base font-semibold transition-colors bg-transparent">
-                  دانلود از کافه بازار
-                </p>
-              </Button>
+            <Button
+              className="flex  bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.3rem] py-[0.8rem] items-center justify-center"
+              placeholder={undefined}
+            >
+              <HiDownload className="w-6 h-6 text-[#7F38B7]" />
+              <p className="block antialiased text-gray-700 text-base md:text-base font-semibold transition-colors bg-transparent">
+                دانلود مستقیم
+              </p>
+            </Button>
+            <Button
+              className="flex mt-5 bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.3rem] py-[0.8rem] items-center justify-center"
+              placeholder={undefined}
+            >
+              <img src={bazar} className="w-8 h-8" />
+              <p className="block antialiased text-gray-700 text-base md:text-base font-semibold transition-colors bg-transparent">
+                دانلود از کافه بازار
+              </p>
+            </Button>
           </div>
           {/* small size */}
           <div className="flex flex-row justify-around items-end md:hidden">
