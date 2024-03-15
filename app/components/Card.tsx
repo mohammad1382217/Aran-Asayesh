@@ -11,10 +11,10 @@ interface CardComponent {
 const CardComponent: React.FC<CardComponent> = ({ text, img, rate, offer }) => {
   return (
     <Card
-      className="max-w-72  mt-10 mr-2 mb-3 p-0 card cursor-pointer"
-      imgSrc=""
+      className="max-w-64 h-72  mt-10 mr-2 mb-3 p-0 card cursor-pointer"
+      imgSrc={img}
     >
-      <img className=" -mt-1 w-[105%] !max-w-[101%]" src={img} alt="" />
+      {/* <img className="-mr-[1.15rem] h-40 max-w-[16.2rem]" src={img} alt="" /> */}
       {/* <a href="#"> */}
       <h5 className="text-lg mr-5 font-light tracking-tight text-[#303030] dark:text-white">
         {text}
