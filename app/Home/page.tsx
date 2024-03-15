@@ -10,13 +10,12 @@ import health from "../assets/images/icons/health.svg";
 import recreational from "../assets/images/icons/recreational.svg";
 import teacher from "../assets/images/icons/teacher.svg";
 import LineSpace from "../components/lineSpace";
-import "./style.css";
 import CardComponent from "../components/Card";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col mt-10 justify-center">
-      <div className="flex flex-col md:flex-row  px-5">
+    <div className="flex flex-col mt-10 justify-center items-center">
+      <div className="flex flex-col lg:w-9/12 w-11/12 md:flex-row  px-5">
         {/* <div> */}
         <img src={ImageHomeHeaderRight} className="md:w-8/12 rounded-t-lg" alt="" />
         <div className="flex flex-row md:flex-col md:w-4/12">
@@ -30,7 +29,7 @@ const Home: React.FC = () => {
             className="w-6/12 md:w-full rounded-t-lg"
             alt=""
           />
-          <div className="flex flex-col w-1/3">
+          {/* <div className="flex flex-col w-1/3">
             <img
               src={ImageHomeHeaderLeft1}
               className="w-full rounded-t-lg"
@@ -41,12 +40,12 @@ const Home: React.FC = () => {
               className="w-full rounded-t-lg"
               alt=""
             />
-          </div>
+          </div> */}
         </div>
         {/* </div> */}
       </div>
-      <div>
-      <div className="bg-[#8448B2] my-3 flex flex-col justify-center items-center">
+      
+      <div className="bg-[#8448B2] w-full my-3 flex flex-col justify-center items-center">
         <div className="mt-10 lg:w-9/12 w-11/12 ">
           <LineSpace
             color={`#FFFFFF`}
@@ -60,8 +59,9 @@ const Home: React.FC = () => {
           <CardComponent text={'باغ رستوران بهشت'} rate={'4.0'} offer={["10%", "20%"]} img={foodpost} />
           </div>
         </div>
-        </div>
-        <div className="mt-10 mx-auto lg:w-9/12 w-11/12">
+      </div>
+      <div className="lg:w-9/12 w-11/12">
+        <div className="mt-10 mx-auto ">
           <LineSpace
             color={`#717171`}
             text={"رستوران و کافی‌شاپ"}
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
           <CardComponent text={'باغ رستوران بهشت'} rate={'4.0'} offer={["10%", "20%"]} img={foodpost} />
           </div>
         </div>
-        <div className="mt-10 mx-auto lg:w-9/12 w-11/12">
+        <div className="mt-10 mx-auto">
           <LineSpace
             color={`#717171`}
             text={"تفریحی و ورزشی"}
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
           <CardComponent text={'باغ رستوران بهشت'} rate={'4.0'} offer={["10%", "20%"]} img={foodpost} />
           </div>
         </div>
-        <div className="mt-10 mx-auto lg:w-9/12 w-11/12">
+        <div className="mt-10 mx-auto">
           <LineSpace
             color={`#717171`}
             text={"پزشکی و سلامت"}
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
           <CardComponent text={'باغ رستوران بهشت'} rate={'4.0'} offer={["10%", "20%"]} img={foodpost} />
           </div>
         </div>
-        <div className="mt-10 mx-auto lg:w-9/12 w-11/12">
+        <div className="mt-10 mx-auto">
           <LineSpace
             color={`#717171`}
             text={"هنری و آموزشی"}
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
           <CardComponent text={'باغ رستوران بهشت'} rate={'4.0'} offer={["10%", "20%"]} img={foodpost} />
           </div>
         </div>
-        <div className="mt-10 mx-auto lg:w-9/12 w-11/12">
+        <div className="mt-10 mx-auto">
           <LineSpace
             color={`#717171`}
             text={"زیبایی و آرایشی"}
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
           <CardComponent text={'باغ رستوران بهشت'} rate={'4.0'} offer={["10%", "20%"]} img={foodpost} />
           </div>
         </div>
-        <div className="mt-10 mx-auto lg:w-9/12 w-11/12">
+        <div className="mt-10 mx-auto">
           <LineSpace
             color={`#717171`}
             text={"خدمات"}
@@ -140,27 +140,33 @@ const Home: React.FC = () => {
           </div>
         </div>
         </div>
+          {/* <div className="grid items-center justify-between grid-cols-4">
+            <CardComponent
+              text={"باغ رستوران بهشت"}
+              rate={"4.0"}
+              offer={["10%", "20%"]}
+              img={foodpost}
+            />
+            <CardComponent
+              text={"باغ رستوران بهشت"}
+              rate={"4.0"}
+              offer={["10%", "20%"]}
+              img={foodpost}
+            />
+            <CardComponent
+              text={"باغ رستوران بهشت"}
+              rate={"4.0"}
+              offer={["10%", "20%"]}
+              img={foodpost}
+            />
+            <CardComponent
+              text={"باغ رستوران بهشت"}
+              rate={"4.0"}
+              offer={["10%", "20%"]}
+              img={foodpost}
+            />
+          </div> */}
     </div>
-          // <div className="grid items-center justify-between grid-cols-3">
-          //   <CardComponent
-          //     text={"باغ رستوران بهشت"}
-          //     rate={"4.0"}
-          //     offer={["10%", "20%"]}
-          //     img={foodpost}
-          //   />
-          //   <CardComponent
-          //     text={"باغ رستوران بهشت"}
-          //     rate={"4.0"}
-          //     offer={["10%", "20%"]}
-          //     img={foodpost}
-          //   />
-          //   <CardComponent
-          //     text={"باغ رستوران بهشت"}
-          //     rate={"4.0"}
-          //     offer={["10%", "20%"]}
-          //     img={foodpost}
-          //   />
-          // </div>
         
   );
 };

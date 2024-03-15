@@ -9,7 +9,7 @@ interface LineSpaceProps {
 const LineSpace: React.FC<LineSpaceProps> = ({ text, icon, color }) => {
   return (
     <div
-      className="flex items-center justify-center px-3"
+      className="flex items-center justify-center md:px-3"
       style={{ color: color }}
     >
       {icon}
