@@ -1,7 +1,7 @@
 import "./globals.scss";
 import React from "react";
 import Home from "./Home/page";
-import Login from "./Login/page";
+import Login from "./login/page";
 import RootLayout from "./layout";
 import AboutUs from "./AboutUs/page";
 import OurGoals from "./OurGoals/page";
