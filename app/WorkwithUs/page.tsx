@@ -2,6 +2,9 @@ import React from "react";
 import workwithus from "../assets/images/workwithus.png";
 import C_Input from "../components/input";
 import { Button, Textarea } from "@material-tailwind/react";
+import WorkwithUsCard from "../components/WorkwithusCard";
+import laptop from '../assets/images/MacBook Pro 16.png'
+import phone from '../assets/images/Samsung Galaxy Z Fold 3.png'
 const WorkWithUs = () => {
   return (
     <div className="flex flex-col w-full">
@@ -79,10 +82,12 @@ const WorkWithUs = () => {
 
         <Button className="bg-[#8754AF] mt-3">ثبت درخواست</Button>
       </div>
-      <div className="container mt-10 mx-auto flex flex-col py-7 px-4 lg:flex-row w-11/12 lg:w-10/12 bg-[#FFFFFF] rounded-2xl gap-4">
+      <div className="container mt-10 mx-auto flex flex-col py-7 px-5 lg:flex-row w-11/12 lg:w-10/12 bg-[#FFFFFF] rounded-2xl gap-7 ">
         <p className="font-semibold text-xl text-center text-[#303030] ">
           ثبت تبلیغات پربازده کسب و کار شما{" "}
         </p>
+        <WorkwithUsCard img={phone} title="بنر در اپلیکیشن موبایل" text="محصول تیم خلاق آران آسایش آفرینان یعنی کارت تخفیف آران آسایش، حامی اقتصاد خانوار بوده و تلاش شده است." />
+        <WorkwithUsCard img={laptop} title="پیشنهاد ویژه در وبسایت" text="محصول تیم خلاق آران آسایش آفرینان یعنی کارت تخفیف آران آسایش، حامی اقتصاد خانوار بوده و تلاش شده است." />
       </div>
     </div>
   );
