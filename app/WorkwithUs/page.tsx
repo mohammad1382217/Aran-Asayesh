@@ -76,10 +76,14 @@ const WorkWithUs = () => {
           }}
           containerProps={{ className: "min-w-[90px]" }}
         />
-       
+
         <Button className="bg-[#8754AF] mt-3">ثبت درخواست</Button>
       </div>
-      <div className="container mt-10 mx-auto flex flex-col py-7 px-4 lg:flex-row w-11/12 lg:w-10/12 bg-[#FFFFFF] rounded-2xl gap-4"></div>
+      <div className="container mt-10 mx-auto flex flex-col py-7 px-4 lg:flex-row w-11/12 lg:w-10/12 bg-[#FFFFFF] rounded-2xl gap-4">
+        <p className="font-semibold text-xl text-center text-[#303030] ">
+          ثبت تبلیغات پربازده کسب و کار شما{" "}
+        </p>
+      </div>
     </div>
   );
 };
