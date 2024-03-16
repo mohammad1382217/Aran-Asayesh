@@ -25,24 +25,9 @@ main {
   display: block;
 }
 
-.ant-select-selection-placeholder {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.rmdp-container {
-  width: 100% !important;
-}
-
 body {
   overflow-y: auto;
 }
-
-label {
-  padding: 0 !important;
-}
-
-
 
 //  scrool
 /* width */
@@ -62,16 +47,12 @@ label {
 ::-webkit-scrollbar-thumb {
   background: #8448B2; 
   border-radius: 5px;
-
-  // border-radius: 6px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #7f26c4; 
 }
-
-
 
 .box_shadow{
   box-shadow: 0px 1px 5px 0px #00000040;
