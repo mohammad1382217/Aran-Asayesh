@@ -200,10 +200,10 @@ export const FooterWithSocialLinks = () => {
       </section>
       <section className="w-full bg-[#D9D9D9] flex items-center justify-center !py-5 lg:py-4">
         <div className="container mx-auto px-4">
-            <div className="w-full flex flex-col justify-between items-center md:flex-row">
+            <div className="w-full flex flex-col justify-between items-center xl:flex-row">
               <Typography
                 variant="small"
-                className="mb-4 text-center font-normal text-[#717171] md:mb-0"
+                className="mb-4 text-center font-normal text-[#717171] xl:mb-0"
                 placeholder={undefined}
               >
                 <Link to="#">
@@ -268,7 +268,7 @@ const RootLayout: React.FC = () => {
                   آران آسایش
                 </span>
               </div>
-              <div className="flex items-center justify-center gap-4">
+              <div className="hidden xl:flex xl:items-center xl:justify-center gap-4">
                 <div className="flex items-center justify-center gap-2">
                   <span className="text-lg font-semibold text-[#8754AF]">
                     خرید گیفت کارد
@@ -294,7 +294,7 @@ const RootLayout: React.FC = () => {
             </nav>
           </div>
         </section>
-        <section className="w-full flex items-center justify-center py-6 lg:py-4 bg-[#ECECEC]">
+        <section className="w-full hidden xl:flex xl:items-center xl:justify-center py-6 lg:py-4 bg-[#ECECEC]">
           <div className="container mx-auto px-4">
             <div className="w-full flex items-center justify-between">
               <div className="w-full flex items-center justify-center gap-5">
@@ -302,7 +302,7 @@ const RootLayout: React.FC = () => {
                   <button
                     onMouseEnter={() => setOpenRestaurant(true)}
                     onMouseLeave={() => setOpenRestaurant(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
                   >
                     رستوران و کافی‌شاپ
                     <DropDownIcon />
@@ -381,7 +381,7 @@ const RootLayout: React.FC = () => {
                   <button
                     onMouseEnter={() => setFunMenu(true)}
                     onMouseLeave={() => setFunMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
                   >
                     تفریحی و ورزشی
                     <DropDownIcon />
@@ -444,7 +444,7 @@ const RootLayout: React.FC = () => {
                   <button
                     onMouseEnter={() => setOpenMedicalMenu(true)}
                     onMouseLeave={() => setOpenMedicalMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
                   >
                     پزشکی و سلامت
                     <DropDownIcon />
@@ -531,7 +531,7 @@ const RootLayout: React.FC = () => {
                   <button
                     onMouseEnter={() => setOpenArtMenu(true)}
                     onMouseLeave={() => setOpenArtMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
                   >
                     هنری و آموزشی
                     <DropDownIcon />
@@ -578,7 +578,7 @@ const RootLayout: React.FC = () => {
                   <button
                     onMouseEnter={() => setOpenBeautyMenu(true)}
                     onMouseLeave={() => setOpenBeautyMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
                   >
                     زیبایی و آرایشی
                     <DropDownIcon />
@@ -665,7 +665,7 @@ const RootLayout: React.FC = () => {
                   <button
                     onMouseEnter={() => setOpenServicesMenu(true)}
                     onMouseLeave={() => setOpenServicesMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
                   >
                     خدمات
                     <DropDownIcon />
@@ -721,7 +721,7 @@ const RootLayout: React.FC = () => {
                 <input
                   type="search"
                   id="location-search"
-                  className="w-80 block rounded-[10px] py-2.5 px-5 z-20 text-sm text-gray-900 bg-gray-50 border-2 border-[#8754AF] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                  className="hidden w-80 xl:block rounded-[10px] py-2.5 px-5 z-20 text-sm text-gray-900 bg-gray-50 border-2 border-[#8754AF] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                   placeholder="جستجو (مرکز خدماتی، رستوران، استخر و ...)"
                   required
                 />
