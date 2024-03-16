@@ -16,6 +16,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import OurHistory from "./OurHistory/page";
+import WorkWithUs from "./WorkwithUs/page";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "OurHistory",
         element: <OurHistory />,
+      },
+      {
+        path: "WorkWithUs",
+        element: <WorkWithUs />,
       },
     ],
   },
