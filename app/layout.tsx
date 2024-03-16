@@ -809,7 +809,7 @@ const RootLayout: React.FC = () => {
         </div>
       </header>
 
-      <main>
+      <main className="bg-[#F5F5F5] py-10 px-2 flex justify-center items-center">
         <ScrollRestoration />
         <Outlet />
       </main>

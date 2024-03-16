@@ -15,6 +15,7 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
+import OurHistory from "./OurHistory/page";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "Application",
         element: <Application />,
+      },
+      {
+        path: "OurHistory",
+        element: <OurHistory />,
       },
     ],
   },
