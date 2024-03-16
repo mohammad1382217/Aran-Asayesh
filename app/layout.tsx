@@ -145,7 +145,7 @@ export const FooterWithSocialLinks = () => {
   return (
     <footer className="w-full">
       <section className="bg-[#ECECEC] w-full flex items-center justify-center py-6 lg:py-4">
-        <div className="container mx-auto px-4 lg:p-8">
+        <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col xl:flex-row justify-between gap-y-6 gap-x-8 py-8">
             <div className="w-full xl:max-w-80 flex flex-col items-center md:items-start justify-center gap-2">
               <div className="md:w-full flex items-center justify-center gap-2">
@@ -232,7 +232,7 @@ export const FooterWithSocialLinks = () => {
         </div>
       </section>
       <section className="w-full bg-[#D9D9D9] flex items-center justify-center !py-5 lg:py-4">
-        <div className="container mx-auto px-4 lg:p-8">
+        <div className="container mx-auto px-4 lg:px-8">
           <div className="w-full flex flex-col justify-between items-center xl:flex-row">
             <Typography
               variant="small"
@@ -293,7 +293,7 @@ const RootLayout: React.FC = () => {
     <>
       <header>
         <section className="w-full flex items-center justify-center py-6 lg:py-4 sm:border-b-1">
-          <div className="container mx-auto px-4 lg:p-8">
+          <div className="container mx-auto px-4 lg:px-8">
             <nav className="w-full flex xl:items-center sm:justify-between justify-evenly gap-2">
               <div className="inline-flex items-center xl:hidden">
                 <IconButton
@@ -346,7 +346,7 @@ const RootLayout: React.FC = () => {
           </div>
         </section>
         <section className="w-full hidden xl:flex xl:items-center xl:justify-center py-6 lg:py-4 bg-[#ECECEC]">
-          <div className="container mx-auto px-4 lg:p-8">
+          <div className="container mx-auto px-4 lg:px-8">
             <div className="w-full flex items-center justify-between">
               <div className="w-full flex items-center justify-center gap-5">
                 <div>
