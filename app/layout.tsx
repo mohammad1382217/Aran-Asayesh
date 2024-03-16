@@ -143,13 +143,17 @@ const DropDownIcon = () => {
 
 export const FooterWithSocialLinks = () => {
   return (
-    <footer className="w-full bg-[#F5F5F5]">
-      <section className="w-full flex items-center justify-center py-6 lg:py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between gap-y-6 gap-x-8 py-8">
-            <div className="max-w-80 flex flex-col items-start justify-center gap-2">
-              <div className="flex items-center justify-center gap-2">
-                <img width={79} height={102} src={logo} alt="AranAsayesh" />
+    <footer className="w-full">
+      <section className="bg-[#ECECEC] w-full flex items-center justify-center py-6 lg:py-4">
+        <div className="container mx-auto px-4 lg:p-8">
+          <div className="flex flex-col xl:flex-row justify-between gap-y-6 gap-x-8 py-8">
+            <div className="w-full xl:max-w-80 flex flex-col items-center md:items-start justify-center gap-2">
+              <div className="md:w-full flex items-center justify-center gap-2">
+                <img
+                  className="xl:w-[79px] xl:h-[102px] w-[43px] h-[56px]"
+                  src={logo}
+                  alt="AranAsayesh"
+                />
                 <Typography
                   variant="h5"
                   className="text-3xl font-semibold text-[#8754AF]"
@@ -164,69 +168,71 @@ export const FooterWithSocialLinks = () => {
                 در ستون و{" "}
               </p>
             </div>
-            <div className="grid grid-cols-3 justify-between gap-8 self-end">
-              {LINKS.map(({ title, items }) => (
-                <ul
-                  key={title}
-                  className="flex flex-col items-start justify-center"
-                >
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="mb-3 text-2xl font-semibold text-[#303030]"
+            <div className="flex flex-col lg:flex-row justify-between items-center lg:w-full gap-y-8">
+              <div className="grid max-[425px]:grid-cols-1 grid-cols-3 justify-between gap-2 gap-y-8 w-full lg:w-auto xl:gap-6 xl:self-end self-start">
+                {LINKS.map(({ title, items }) => (
+                  <ul
+                    key={title}
+                    className="flex flex-col items-center justify-center lg:items-start"
+                  >
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="mb-3 text-lg xl:text-xl font-semibold text-[#303030]"
+                      placeholder={undefined}
+                    >
+                      {title}
+                    </Typography>
+                    {items.map((link) => (
+                      <li key={link.item}>
+                        <Typography
+                          as="a"
+                          href={link.link}
+                          color="gray"
+                          className="py-1.5 text-base xl:text-lg font-normal transition-colors hover:text-blue-gray-900 items-center lg:items-start"
+                          placeholder={undefined}
+                        >
+                          {link.item}
+                        </Typography>
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
+              <div className="flex max-[425px]:flex-col items-center">
+                <div className="flex flex-col items-center justify-center">
+                  <h3 className="block antialiased mb-3 text-lg xl:text-xl font-semibold text-[#303030]">
+                    دریافت اپلیکیشن
+                  </h3>
+
+                  <Button
+                    className="flex items-center shadow-none !bg-transparent text-gray-700 hover:!bg-transparent"
                     placeholder={undefined}
                   >
-                    {title}
-                  </Typography>
-                  {items.map((link) => (
-                    <li key={link.item}>
-                      <Typography
-                        as="a"
-                        href={link.link}
-                        color="gray"
-                        className="py-1.5 text-lg font-normal transition-colors hover:text-blue-gray-900"
-                        placeholder={undefined}
-                      >
-                        {link.item}
-                      </Typography>
-                    </li>
-                  ))}
-                </ul>
-              ))}
-            </div>
-            <div className="flex items-center">
-              <div className="flex flex-col items-center justify-center">
-                <h3 className="block antialiased mb-3 text-2xl font-semibold text-[#303030]">
-                  دریافت اپلیکیشن
-                </h3>
+                    <HiDownload className="w-6 h-6" />
+                    <p className="block antialiased text-gray-700 text-base xl:text-lg font-normal transition-colors bg-transparent">
+                      دانلود مستقیم
+                    </p>
+                  </Button>
+                  <Button
+                    className="flex items-center shadow-none !bg-transparent text-gray-700 hover:!bg-transparent"
+                    placeholder={undefined}
+                  >
+                    <img src={bazar} className="w-8 h-8" />
+                    <p className="block antialiased text-gray-700 text-base xl:text-lg font-normal transition-colors bg-transparent">
+                      دانلود از کافه بازار
+                    </p>
+                  </Button>
+                </div>
 
-                <Button
-                  className="flex items-center shadow-none !bg-transparent text-gray-700 hover:!bg-transparent"
-                  placeholder={undefined}
-                >
-                  <HiDownload className="w-6 h-6" />
-                  <p className="block antialiased text-gray-700 text-lg font-normal transition-colors bg-transparent">
-                    دانلود مستقیم
-                  </p>
-                </Button>
-                <Button
-                  className="flex items-center shadow-none !bg-transparent text-gray-700 hover:!bg-transparent"
-                  placeholder={undefined}
-                >
-                  <img src={bazar} className="w-8 h-8" />
-                  <p className="block antialiased text-gray-700 text-lg font-normal transition-colors bg-transparent">
-                    دانلود از کافه بازار
-                  </p>
-                </Button>
+                <img src={qr_code} alt="" />
               </div>
-
-              <img src={qr_code} alt="" />
             </div>
           </div>
         </div>
       </section>
       <section className="w-full bg-[#D9D9D9] flex items-center justify-center !py-5 lg:py-4">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:p-8">
           <div className="w-full flex flex-col justify-between items-center xl:flex-row">
             <Typography
               variant="small"
@@ -286,8 +292,8 @@ const RootLayout: React.FC = () => {
   return (
     <>
       <header>
-        <section className="w-full flex items-center justify-center py-6 lg:py-4">
-          <div className="container mx-auto px-4">
+        <section className="w-full flex items-center justify-center py-6 lg:py-4 sm:border-b-1">
+          <div className="container mx-auto px-4 lg:p-8">
             <nav className="w-full flex xl:items-center sm:justify-between justify-evenly gap-2">
               <div className="inline-flex items-center xl:hidden">
                 <IconButton
@@ -310,7 +316,9 @@ const RootLayout: React.FC = () => {
                   آران آسایش
                 </span>
               </div>
-              <div className="flex xl:hidden items-center"><Magnifier /></div>
+              <div className="flex xl:hidden items-center">
+                <Magnifier />
+              </div>
               <div className="hidden xl:flex xl:items-center xl:justify-center gap-4">
                 <div className="flex items-center justify-center gap-2">
                   <span className="text-lg font-semibold text-[#8754AF]">
@@ -338,7 +346,7 @@ const RootLayout: React.FC = () => {
           </div>
         </section>
         <section className="w-full hidden xl:flex xl:items-center xl:justify-center py-6 lg:py-4 bg-[#ECECEC]">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 lg:p-8">
             <div className="w-full flex items-center justify-between">
               <div className="w-full flex items-center justify-center gap-5">
                 <div>

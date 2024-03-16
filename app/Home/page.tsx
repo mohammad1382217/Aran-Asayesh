@@ -20,7 +20,7 @@ const Home: React.FC = () => {
   return (
     <>
       <section className="flex flex-col justify-center items-center">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:p-8">
           <div className="w-full flex flex-col pt-6">
             <div className="w-full flex">
               <div className="md:w-2/3 rounded-t-lg">
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="w-full bg-[#8448B2] flex flex-col justify-center items-center">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:p-8">
           <div className="w-full my-3 flex flex-col justify-center items-center mt-10">
             <LineSpace
               color={`#FFFFFF`}
@@ -103,7 +103,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="w-full bg-[#F5F5F5] flex flex-col justify-center items-center">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:p-8">
           <div className="w-full mb-28">
             <div className="w-full my-3 flex flex-col justify-center items-center mt-10">
               <LineSpace
@@ -306,8 +306,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className="w-full flex flex-col justify-center items-center h-[327px]">
-        <div className="container mx-auto px-4">
+      <section className="w-full flex flex-col justify-center items-center xl:h-[327px]">
+        <div className="container mx-auto px-4 lg:p-8">
           <div className="w-full flex items-center justify-evenly">
             <div className="relative -right-16 -top-9"><img src={app_phone} alt="" /></div>
             <div className="max-w-[629px] flex flex-col justify-center relative -right-16">
