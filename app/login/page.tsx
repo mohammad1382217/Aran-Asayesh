@@ -3,7 +3,8 @@ import logo from "../assets/images/icons/logo-orginal 2.png";
 import { Input } from "@material-tailwind/react";
 import { LuUser2 } from "react-icons/lu";
 import { Button } from "@material-tailwind/react";
-import {NavLink} from 'react-router-dom'
+import { NavLink } from "react-router-dom";
+
 const Login = () => {
   const [isSendSms, setisSendSms] = useState(false);
   return (
@@ -36,12 +37,14 @@ const Login = () => {
                 className: "hidden",
               }}
               containerProps={{ className: "min-w-[90px]" }}
+              crossOrigin={Input}
             />
             <Button
               onClick={() => {
                 setisSendSms(true);
               }}
               className="bg-[#8754AF] w-full mt-3"
+              placeholder={undefined}
             >
               ادامه
             </Button>
@@ -55,49 +58,54 @@ const Login = () => {
               </span>
             </div>
             <p className="text-base font-light text-[#717171] p-2">
-            کد پیامک شده را وارد نمایید            
+              کد پیامک شده را وارد نمایید
             </p>
             <div className="flex justify-between">
-            <Input
-              maxLength={1}
-              size="md"
-              className="text-center !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
-              labelProps={{
-                className: "hidden",
-              }}
-            />
-            <Input
-              maxLength={1}
-              size="md"
-              className="text-center !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
-              labelProps={{
-                className: "hidden",
-              }}
-            />
-            <Input
-              maxLength={1}
-              size="md"
-              className="text-center !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
-              labelProps={{
-                className: "hidden",
-              }}
-            />
-            <Input
-              maxLength={1}
-              size="md"
-              className="text-center !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
-              labelProps={{
-                className: "hidden",
-              }}
-            />
-            <Input
-              maxLength={1}
-              size="md"
-              className="text-center -ml-[-1.4rem] !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
-              labelProps={{
-                className: "hidden",
-              }}
-            />
+              <Input
+                maxLength={1}
+                size="md"
+                className="text-center !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
+                labelProps={{
+                  className: "hidden",
+                }}
+                crossOrigin={Input}
+              />
+              <Input
+                maxLength={1}
+                size="md"
+                className="text-center !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
+                labelProps={{
+                  className: "hidden",
+                }}
+                crossOrigin={Input}
+              />
+              <Input
+                maxLength={1}
+                size="md"
+                className="text-center !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
+                labelProps={{
+                  className: "hidden",
+                }}
+                crossOrigin={Input}
+              />
+              <Input
+                maxLength={1}
+                size="md"
+                className="text-center !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
+                labelProps={{
+                  className: "hidden",
+                }}
+                crossOrigin={Input}
+              />
+              <Input
+                maxLength={1}
+                size="md"
+                className="text-center -ml-[-1.4rem] !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
+                labelProps={{
+                  className: "hidden",
+                }}
+                crossOrigin={Input}
+              />
             </div>
 
             <Input
@@ -109,10 +117,15 @@ const Login = () => {
                 className: "hidden",
               }}
               containerProps={{ className: "min-w-[90px]" }}
+              crossOrigin={Input}
             />
             <NavLink to="/Home">
-
-            <Button className="bg-[#8754AF] w-full mt-6">ورود</Button>
+              <Button
+                className="bg-[#8754AF] w-full mt-6"
+                placeholder={undefined}
+              >
+                ورود
+              </Button>
             </NavLink>
           </div>
         )}
@@ -122,6 +135,7 @@ const Login = () => {
           onClick={() => {
             setisSendSms(false);
           }}
+          placeholder={undefined}
         >
           بازگشت {">"}
         </Button>

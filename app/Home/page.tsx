@@ -292,13 +292,13 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-full md:h-72 lg:h-80 md:mt-48  bg-[#FFFFFF] mt-10 px-10 py-10 flex flex-row justify-center items-center">
-        <div className=" md:flex md:justify-center">
+      <div className="w-full md:h-72 lg:h-80 md:mt-48 bg-[#FFFFFF] mt-10 px-10 flex flex-row justify-center items-center">
+        <div className="md:flex md:justify-center">
           <div className="order-2 md:w-6/12 md:-mr-6 md:flex md:justify-center md:flex-col">
             <h1 className="text-lg font-semibold text-[#303030] p-5 md:p-2">
               با اپلیکیشن آران آسایش، ساده‌تر از همیشه تخفیف بگیر!
             </h1>
-            <p className="text-sm font-light text-[#717171] px-5 md:px-2 mb-3">
+            <p className="max-w-lg text-sm font-light text-[#717171] px-5 md:px-2 mb-3 text-justify">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
               استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
               در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
@@ -311,10 +311,10 @@ const Home: React.FC = () => {
           </div>
           <img
             src={app_phone}
-            className="w-3/12 md:bottom-10 md:relative hidden md:inline-flex md:order-1"
+            className="md:relative -top-[50px]"
             alt=""
           />
-          <div className="my-10 md:flex flex-col hidden md:flex md:justify-center md:flex-col  md:order-3">
+          <div className="md:flex flex-col hidden md:justify-center md:flex-col md:order-3">
             <Button
               className="flex  bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.3rem] py-[0.8rem] items-center justify-center"
               placeholder={undefined}
@@ -337,7 +337,7 @@ const Home: React.FC = () => {
           {/* small size */}
           <div className="flex flex-row justify-around items-end md:hidden">
             <img src={app_phone} className="w-5/12 md:order-1" alt="" />
-            <div className="my-10 flex flex-col md:order-3 w-6/12">
+            <div className="flex flex-col md:order-3 w-6/12">
               <Button
                 className="flex  bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.1rem] py-[0.8rem] items-center justify-center"
                 placeholder={undefined}

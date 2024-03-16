@@ -1,6 +1,5 @@
 import React from "react";
 import bazar from "./assets/bazar.svg";
-import { Button } from "flowbite-react";
 import { VscSend } from "react-icons/vsc";
 import funMenu from "./assets/funMenu.svg";
 import { HiDownload } from "react-icons/hi";
@@ -9,9 +8,9 @@ import closeUpOne from "./assets/close-up-1.svg";
 import beautyMenu from "./assets/beautyMenu.svg";
 import medicalMenu from "./assets/medicalMenu.svg";
 import servicesMenu from "./assets/servicesMenu.svg";
-import { Typography } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
 import ArtAndEduMenu from "./assets/ArtAndEduMenu.svg";
-import { Outlet, ScrollRestoration } from "react-router-dom";
+import { NavLink, Outlet, ScrollRestoration } from "react-router-dom";
 import qr_code from "./assets/mobile-client-qr-code-settings.svg";
 
 const LINKS = [
@@ -97,10 +96,10 @@ const Gift = () => {
 
 export const FooterWithSocialLinks = () => {
   return (
-    <footer className="relative w-full">
+    <footer className="relative w-full bg-[#F5F5F5]">
       <div className="mx-auto w-full max-w-7xl pt-4 pb-8">
         <div className="flex justify-between gap-y-6 gap-x-4">
-          <div className="max-w-[398px] flex flex-col items-start justify-center gap-2">
+          <div className="max-w-[398px] flex flex-col items-start justify-center gap-2 ">
             <div className="flex items-center justify-center gap-2">
               <img width={79} height={102} src={logo} alt="AranAsayesh" />
               <Typography
@@ -153,13 +152,19 @@ export const FooterWithSocialLinks = () => {
                 دریافت اپلیکیشن
               </h3>
 
-              <Button className="bg-transparent text-gray-700 hover:!bg-transparent">
+              <Button
+                className="bg-transparent text-gray-700 hover:!bg-transparent"
+                placeholder={undefined}
+              >
                 <HiDownload className="w-6 h-6" />
                 <p className="block antialiased text-gray-700 text-lg font-normal transition-colors bg-transparent">
                   دانلود مستقیم
                 </p>
               </Button>
-              <Button className="bg-transparent text-gray-700 hover:!bg-transparent">
+              <Button
+                className="bg-transparent text-gray-700 hover:!bg-transparent"
+                placeholder={undefined}
+              >
                 <img src={bazar} className="w-8 h-8" />
                 <p className="block antialiased text-gray-700 text-lg font-normal transition-colors bg-transparent">
                   دانلود از کافه بازار
@@ -222,44 +227,54 @@ const RootLayout: React.FC = () => {
   const [openArtMenu, setOpenArtMenu] = React.useState(false);
   const [openBeautyMenu, setOpenBeautyMenu] = React.useState(false);
   const [openServicesMenu, setOpenServicesMenu] = React.useState(false);
+
   return (
     <>
-      <header className="flex flex-col items-center justify-center">
-        <nav className="w-full max-w-7xl flex flex-[1_0_0] flex-wrap items-center justify-between py-2 lg:py-4">
-          <div className="flex items-center justify-center gap-2">
-            <img width={79} height={102} src={logo} alt="AranAsayesh" />
-            <span className="text-3xl font-semibold text-[#8754AF]">
-              آران آسایش
-            </span>
+      <header>
+        <section className="w-full flex items-center justify-center py-6 lg:py-4">
+          <div className="container mx-auto px-4">
+            <nav className="w-full flex items-center justify-between gap-2">
+              <div className="flex items-center justify-center gap-4">
+                <div className="flex self-center mr-8">
+                  <img width={79} height={102} src={logo} alt="AranAsayesh" />
+                </div>
+                <span className="text-3xl font-semibold text-[#8754AF]">
+                  آران آسایش
+                </span>
+              </div>
+              <div className="flex items-center justify-center gap-4">
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-lg font-semibold text-[#8754AF]">
+                    خرید گیفت کارد
+                  </span>
+                  <Gift />
+                </div>
+                <Button
+                  className="py-2 rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white"
+                  placeholder={undefined}
+                >
+                  ورود
+                </Button>
+                <NavLink to="/Application">
+                  <Button
+                    className="py-2 px-8 flex items-center justify-center rounded-lg border-[#8754AF] text-lg font-semibold bg-[#8754AF] hover:!bg-[#8754AF] text-white gap-2"
+                    placeholder={undefined}
+                  >
+                    دانلود اپلیکیشن
+                    <HiDownload className="w-6 h-6" />
+                  </Button>
+                </NavLink>
+              </div>
+            </nav>
           </div>
-          <div className="flex items-center justify-center gap-4">
-            <div className="flex items-center justify-center gap-2">
-              <span className="text-lg font-semibold text-[#8754AF]">
-                خرید گیفت کارد
-              </span>
-              <Gift />
-            </div>
-            <Button className="px-2 py-[2px] rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white">
-              ورود
-            </Button>
-            <Button
-              href="/Application"
-              className="py-[2px] flex items-center justify-center px-[14px] rounded-lg border-[#8754AF] text-lg font-semibold bg-[#8754AF] hover:!bg-[#8754AF] text-white gap-2"
-            >
-              دانلود اپلیکیشن
-              <HiDownload className="w-6 h-6" />
-            </Button>
-          </div>
-        </nav>
-        <div className="w-full flex items-center justify-center bg-[#ECECEC] py-4">
-          <div className="w-full max-w-7xl flex items-center justify-center gap-[90px]">
-            <div className="flex items-center justify-center gap-2.5">
+        </section>
+        <section className="w-full flex items-center justify-center py-6 lg:py-4 bg-[#ECECEC]">
+          <div className="container mx-auto px-4">
+            <div className="w-full flex items-center justify-between gap-2">
               <div>
                 <button
                   onMouseEnter={() => setOpenRestaurant(true)}
                   onMouseLeave={() => setOpenRestaurant(false)}
-                  id="dropdownNavbarLink"
-                  data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >
                   رستوران و کافی‌شاپ
@@ -353,8 +368,6 @@ const RootLayout: React.FC = () => {
                 <button
                   onMouseEnter={() => setFunMenu(true)}
                   onMouseLeave={() => setFunMenu(false)}
-                  id="dropdownNavbarLink"
-                  data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >
                   تفریحی و ورزشی
@@ -432,8 +445,6 @@ const RootLayout: React.FC = () => {
                 <button
                   onMouseEnter={() => setOpenMedicalMenu(true)}
                   onMouseLeave={() => setOpenMedicalMenu(false)}
-                  id="dropdownNavbarLink"
-                  data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >
                   پزشکی و سلامت
@@ -535,8 +546,6 @@ const RootLayout: React.FC = () => {
                 <button
                   onMouseEnter={() => setOpenArtMenu(true)}
                   onMouseLeave={() => setOpenArtMenu(false)}
-                  id="dropdownNavbarLink"
-                  data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >
                   هنری و آموزشی
@@ -598,8 +607,6 @@ const RootLayout: React.FC = () => {
                 <button
                   onMouseEnter={() => setOpenBeautyMenu(true)}
                   onMouseLeave={() => setOpenBeautyMenu(false)}
-                  id="dropdownNavbarLink"
-                  data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >
                   زیبایی و آرایشی
@@ -701,8 +708,6 @@ const RootLayout: React.FC = () => {
                 <button
                   onMouseEnter={() => setOpenServicesMenu(true)}
                   onMouseLeave={() => setOpenServicesMenu(false)}
-                  id="dropdownNavbarLink"
-                  data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >
                   خدمات
@@ -768,48 +773,48 @@ const RootLayout: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="relative">
-              <input
-                type="search"
-                id="location-search"
-                className="w-[400px] block rounded-[10px] py-2.5 px-5 z-20 text-sm text-gray-900 bg-gray-50 border-2 border-[#8754AF] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                placeholder="جستجو (مرکز خدماتی، رستوران، استخر و ...)"
-                required
-              />
-              <button
-                type="submit"
-                className="absolute top-0 end-0 h-full p-2 text-sm font-medium text-purple-700 rounded-e-lg hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800"
-              >
-                <svg
-                  width="27"
-                  height="26"
-                  viewBox="0 0 27 26"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <div className="relative">
+                <input
+                  type="search"
+                  id="location-search"
+                  className="w-[400px] block rounded-[10px] py-2.5 px-5 z-20 text-sm text-gray-900 bg-gray-50 border-2 border-[#8754AF] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                  placeholder="جستجو (مرکز خدماتی، رستوران، استخر و ...)"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="absolute top-0 end-0 h-full p-2 text-sm font-medium text-purple-700 rounded-e-lg hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800"
                 >
-                  <path
-                    d="M12.5778 22.7503C18.3163 22.7503 22.9682 18.1426 22.9682 12.4587C22.9682 6.77473 18.3163 2.16699 12.5778 2.16699C6.83942 2.16699 2.1875 6.77473 2.1875 12.4587C2.1875 18.1426 6.83942 22.7503 12.5778 22.7503Z"
-                    stroke="#8754AF"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M24.0612 23.8337L21.874 21.667"
-                    stroke="#8754AF"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    width="27"
+                    height="26"
+                    viewBox="0 0 27 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.5778 22.7503C18.3163 22.7503 22.9682 18.1426 22.9682 12.4587C22.9682 6.77473 18.3163 2.16699 12.5778 2.16699C6.83942 2.16699 2.1875 6.77473 2.1875 12.4587C2.1875 18.1426 6.83942 22.7503 12.5778 22.7503Z"
+                      stroke="#8754AF"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M24.0612 23.8337L21.874 21.667"
+                      stroke="#8754AF"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </header>
 
-      <main className="bg-[#F5F5F5] py-10 px-2 flex justify-center items-center">
+      <main className="flex justify-center items-center">
         <ScrollRestoration />
         <Outlet />
       </main>

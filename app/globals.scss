@@ -16,6 +16,15 @@
   box-sizing: border-box !important;
 }
 
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  display: block;
+}
+
 .ant-select-selection-placeholder {
   font-size: 0.875rem;
   line-height: 1.25rem;
