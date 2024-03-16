@@ -14,7 +14,7 @@ const WorkwithUsCard: React.FC<WorkwithUsCardProps> = ({
 }) => {
   return (
     <div
-      className="flex flex-col box_shadow rounded-2xl p-10 items-center justify-center md:px-3 bg-[#F5F5F5]"
+      className="flex flex-col md:mx-4 box_shadow rounded-2xl p-10 items-center justify-center md:px-3 bg-[#F5F5F5]"
     >
       <p className="font-semibold text-lg text-center text-[#303030] ">
       {title}
