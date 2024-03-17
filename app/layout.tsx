@@ -18,7 +18,7 @@ const LINKS = [
     title: "همکاری با ما",
     items: [
       { item: "زیر مجموعه شدن", link: "AboutUs" },
-      { item: "تبلیغات", link: "AboutUs" },
+      { item: "تبلیغات", link: "Services" },
       { item: "خدمات ما", link: "AboutUs" },
     ],
   },
@@ -178,7 +178,7 @@ export const FooterWithSocialLinks = () => {
                     <Typography
                       variant="small"
                       color="blue-gray"
-                      className="mb-3 text-lg max-[425px]:text-base xl:text-xl font-semibold text-[#303030]"
+                      className="mb-3 text-base xl:text-lg font-semibold text-[#303030]"
                       placeholder={undefined}
                     >
                       {title}
@@ -189,7 +189,7 @@ export const FooterWithSocialLinks = () => {
                           as="a"
                           href={link.link}
                           color="gray"
-                          className="py-1.5 max-[425px]:text-xs text-base xl:text-lg font-normal transition-colors hover:text-blue-gray-900 items-center lg:items-start"
+                          className="py-1.5 max-[320px]:text-[0.5rem] max-[425px]:text-xs text-base font-normal transition-colors hover:text-blue-gray-900 items-center lg:items-start"
                           placeholder={undefined}
                         >
                           {link.item}
@@ -199,27 +199,27 @@ export const FooterWithSocialLinks = () => {
                   </ul>
                 ))}
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center max-[425px]:justify-between">
                 <div className="flex flex-col items-center justify-center">
-                  <h3 className="block antialiased mb-3 max-[425px]:text-base text-lg xl:text-xl font-semibold text-[#303030]">
+                  <h3 className="block antialiased mb-3 max-[425px]:text-base text-base font-semibold text-[#303030]">
                     دریافت اپلیکیشن
                   </h3>
 
                   <Button
-                    className="flex items-center shadow-none !bg-transparent text-gray-700 hover:!bg-transparent"
+                    className="flex items-center shadow-none !bg-transparent text-gray-700 hover:!bg-transparent max-sm:!px-4"
                     placeholder={undefined}
                   >
                     <HiDownload className="w-6 h-6" />
-                    <p className="block antialiased text-gray-700 max-[425px]:text-sm text-base xl:text-lg font-normal transition-colors bg-transparent">
+                    <p className="block antialiased text-gray-700 max-[425px]:text-sm text-base font-normal transition-colors bg-transparent">
                       دانلود مستقیم
                     </p>
                   </Button>
                   <Button
-                    className="flex items-center shadow-none !bg-transparent text-gray-700 hover:!bg-transparent"
+                    className="flex items-center shadow-none !bg-transparent text-gray-700 hover:!bg-transparent max-sm:!px-4"
                     placeholder={undefined}
                   >
                     <img src={bazar} className="w-8 h-8" />
-                    <p className="block antialiased text-gray-700 max-[425px]:text-sm text-base xl:text-lg font-normal transition-colors bg-transparent">
+                    <p className="block antialiased text-gray-700 max-[425px]:text-sm text-base font-normal transition-colors bg-transparent">
                       دانلود از کافه بازار
                     </p>
                   </Button>
@@ -304,18 +304,20 @@ const RootLayout: React.FC = () => {
                   <HiMenu className="w-6 h-6 text-black" />
                 </IconButton>
               </div>
-              <div className="flex items-center justify-center gap-2 xl:gap-4">
-                <div className="flex self-center xl:mr-8">
-                  <img
-                    className="xl:w-[79px] xl:h-[102px] w-[43px] h-[56px]"
-                    src={logo}
-                    alt="AranAsayesh"
-                  />
+              <NavLink to={"/home"}>
+                <div className="flex items-center justify-center gap-2 xl:gap-4">
+                  <div className="flex self-center xl:mr-8">
+                    <img
+                      className="xl:w-[79px] xl:h-[102px] w-[43px] h-[56px]"
+                      src={logo}
+                      alt="AranAsayesh"
+                    />
+                  </div>
+                  <span className="text-2xl xl:text-3xl font-semibold text-[#8754AF]">
+                    آران آسایش
+                  </span>
                 </div>
-                <span className="text-2xl xl:text-3xl font-semibold text-[#8754AF]">
-                  آران آسایش
-                </span>
-              </div>
+              </NavLink>
               <div className="flex xl:hidden items-center">
                 <Magnifier />
               </div>

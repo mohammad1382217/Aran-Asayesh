@@ -66,6 +66,7 @@ const Home: React.FC = () => {
               color={`#FFFFFF`}
               text={"پیشنهادهای ویژه"}
               icon={<img className="w-7 h-7" src={presentage}></img>}
+              showMore={true}
             />
             <div className="w-full flex justify-between my-6 overflow-x-scroll gap-3">
               <CardComponent
@@ -110,6 +111,7 @@ const Home: React.FC = () => {
                 color={`#717171`}
                 text={"رستوران و کافی‌شاپ"}
                 icon={<img className="w-7 h-7" src={foodIcon}></img>}
+                showMore={true}
               />
               <div className="w-full flex justify-between my-6 overflow-x-scroll gap-3">
                 <CardComponent
@@ -143,6 +145,7 @@ const Home: React.FC = () => {
                 color={`#717171`}
                 text={"تفریحی و ورزشی"}
                 icon={<img className="w-7 h-7" src={recreational}></img>}
+                showMore={true}
               />
               <div className="w-full flex justify-between my-6 overflow-x-scroll gap-3">
                 <CardComponent
@@ -176,6 +179,7 @@ const Home: React.FC = () => {
                 color={`#717171`}
                 text={"پزشکی و سلامت"}
                 icon={<img className="w-7 h-7" src={health}></img>}
+                showMore={true}
               />
               <div className="w-full flex justify-between my-6 overflow-x-scroll gap-3">
                 <CardComponent
@@ -209,6 +213,7 @@ const Home: React.FC = () => {
                 color={`#717171`}
                 text={"هنری و آموزشی"}
                 icon={<img className="w-7 h-7" src={teacher}></img>}
+                showMore={true}
               />
               <div className="w-full flex justify-between my-6 overflow-x-scroll gap-3">
                 <CardComponent
@@ -242,6 +247,7 @@ const Home: React.FC = () => {
                 color={`#717171`}
                 text={"زیبایی و آرایشی"}
                 icon={<img className="w-7 h-7" src={teacher}></img>}
+                showMore={true}
               />
               <div className="w-full flex justify-between my-6 overflow-x-scroll gap-3">
                 <CardComponent
@@ -275,6 +281,7 @@ const Home: React.FC = () => {
                 color={`#717171`}
                 text={"خدمات"}
                 icon={<img className="w-7 h-7" src={teacher}></img>}
+                showMore={true}
               />
               <div className="w-full flex justify-between my-6 overflow-x-scroll gap-3">
                 <CardComponent
@@ -309,7 +316,9 @@ const Home: React.FC = () => {
       <section className="w-full flex flex-col justify-center items-center xl:h-[327px]">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="w-full flex items-center justify-evenly">
-            <div className="relative -right-16 -top-9"><img src={app_phone} alt="" /></div>
+            <div className="relative -right-16 -top-9">
+              <img src={app_phone} alt="" />
+            </div>
             <div className="max-w-[629px] flex flex-col justify-center relative -right-16">
               <h1 className="text-2xl font-semibold text-[#303030] p-5 md:p-2">
                 با اپلیکیشن آران آسایش، ساده‌تر از همیشه تخفیف بگیر!
