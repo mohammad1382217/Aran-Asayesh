@@ -1,13 +1,19 @@
 import "./globals.scss";
 import React from "react";
 import Home from "./Home/page";
+import Blog from "./Blogs/page";
 import Login from "./Login/page";
+import Page404 from "./404/page";
 import RootLayout from "./layout";
 import AboutUs from "./AboutUs/page";
 import OurGoals from "./OurGoals/page";
 import Services from "./Services/page";
+import BlogPost from "./BlogPost/page";
 import ReactDOM from "react-dom/client";
 import Questions from "./Questions/page";
+import OurHistory from "./OurHistory/page";
+import WorkWithUs from "./WorkwithUs/page";
+import Categories from "./Categories/page";
 import Application from "./Application/page";
 import BuySubscription from "./BuySubscription/page";
 import {
@@ -15,10 +21,6 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import OurHistory from "./OurHistory/page";
-import WorkWithUs from "./WorkwithUs/page";
-import Categories from "./Categories/page";
-import Blog from "./Blogs/page";
 
 const router = createBrowserRouter([
   {
@@ -73,11 +75,19 @@ const router = createBrowserRouter([
         path: "Blog",
         element: <Blog />,
       },
+      {
+        path: "BlogPost",
+        element: <BlogPost />,
+      },
     ],
   },
   {
     path: "login",
     element: <Login />,
+  },
+  {
+    path: "*",
+    element: <Page404 />,
   },
 ]);
 

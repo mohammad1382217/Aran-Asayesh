@@ -1,5 +1,5 @@
 import React from "react";
-import bazar from "../assets/bazar.svg";
+import bazar from "../assets/images/icons/bazar.svg";
 import { HiDownload } from "react-icons/hi";
 import { Button } from "@material-tailwind/react";
 import App from "../assets/images/AppDownload.png";

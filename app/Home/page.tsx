@@ -14,7 +14,7 @@ import LineSpace from "../components/lineSpace";
 import CardComponent from "../components/Card";
 import { HiDownload } from "react-icons/hi";
 import { Button } from "@material-tailwind/react";
-import bazar from "../assets/bazar.svg";
+import bazar from "../assets/images/icons/bazar.svg";
 
 const Home: React.FC = () => {
   return (

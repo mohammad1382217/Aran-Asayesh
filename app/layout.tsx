@@ -1,5 +1,5 @@
 import React from "react";
-import bazar from "./assets/bazar.svg";
+import bazar from "./assets/images/icons/bazar.svg";
 import { VscSend } from "react-icons/vsc";
 import funMenu from "./assets/funMenu.svg";
 import { HiDownload, HiMenu } from "react-icons/hi";
@@ -17,16 +17,16 @@ const LINKS = [
   {
     title: "همکاری با ما",
     items: [
-      { item: "زیر مجموعه شدن", link: "AboutUs" },
+      { item: "زیر مجموعه شدن", link: "WorkWithUs" },
       { item: "تبلیغات", link: "Services" },
-      { item: "خدمات ما", link: "AboutUs" },
+      { item: "خدمات ما", link: "WorkWithUs" },
     ],
   },
   {
     title: "ارتباط با ما",
     items: [
       { item: "درباره ما", link: "AboutUs" },
-      { item: "تاریخچه شرکت", link: "OurGoals" },
+      { item: "تاریخچه شرکت", link: "OurHistory" },
       { item: "اهداف شرکت", link: "OurGoals" },
     ],
   },
@@ -35,7 +35,7 @@ const LINKS = [
     items: [
       { item: "سؤالات متداول", link: "Questions" },
       { item: "راهنمای خرید کارت", link: "BuySubscription" },
-      { item: "وبلاگ", link: "OurGoals" },
+      { item: "وبلاگ", link: "Blog" },
     ],
   },
 ];

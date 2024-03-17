@@ -3,8 +3,10 @@ import workwithus from "../assets/images/workwithus.png";
 import C_Input from "../components/input";
 import { Button, Textarea } from "@material-tailwind/react";
 import WorkwithUsCard from "../components/WorkwithusCard";
-import laptop from '../assets/images/MacBook Pro 16.png'
-import phone from '../assets/images/Samsung Galaxy Z Fold 3.png'
+import laptop from "../assets/images/MacBook Pro 16.png";
+import phone from "../assets/images/Samsung Galaxy Z Fold 3.png";
+import telegram from "../assets/images/icons/telegram.svg";
+
 const WorkWithUs = () => {
   return (
     <div className="flex flex-col w-full h-full my-3 bg-[#F5F5F5]">
@@ -44,59 +46,78 @@ const WorkWithUs = () => {
           فرم زیر وارد کرده و پس از ثبت اطلاعات، منتظر تماس کارشناسان ما باشید.
         </p>
         <div className="flex flex-col md:flex-row w-full gap-4">
-        <C_Input
-          size={"md"}
-          type="text"
-          ClassName="w-full "
-          placeholder="نام مجموعه/نام شخص"
-        />
-        <C_Input
-          size={"md"}
-          type="text"
-          ClassName="w-full "
-          placeholder="شماره تلفن مجموعه"
-        />
-        <C_Input
-          size={"md"}
-          type="text"
-          ClassName="w-full "
-          placeholder="شماره موبایل"
-        />
+          <C_Input
+            size={"md"}
+            type="text"
+            ClassName="w-full "
+            placeholder="نام مجموعه/نام شخص"
+          />
+          <C_Input
+            size={"md"}
+            type="text"
+            ClassName="w-full "
+            placeholder="شماره تلفن مجموعه"
+          />
+          <C_Input
+            size={"md"}
+            type="text"
+            ClassName="w-full "
+            placeholder="شماره موبایل"
+          />
         </div>
         <div className="flex flex-col md:flex-row w-full md:gap-4">
-
-        <Textarea
-          size="md"
-          placeholder="آدرس مجموعه"
-          className=" !border-[#C8C8C8] !h-20 md:!h-36 outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
-          labelProps={{
-            className: "hidden",
-          }}
-          // containerProps={{ className: "min-w-[90px]" }}
-        />
-        <Textarea
-          size="md"
-          placeholder="توضیحات مجموعه"
-          className=" !border-[#C8C8C8] !h-56 md:!h-36 mt-2 md:mt-0 outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
-          labelProps={{
-            className: "hidden",
-          }}
-          // containerProps={{ className: "min-w-[90px]" }}
-        />
+          <Textarea
+            size="md"
+            placeholder="آدرس مجموعه"
+            className=" !border-[#C8C8C8] !h-20 md:!h-36 outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
+            labelProps={{
+              className: "hidden",
+            }}
+            // containerProps={{ className: "min-w-[90px]" }}
+          />
+          <Textarea
+            size="md"
+            placeholder="توضیحات مجموعه"
+            className=" !border-[#C8C8C8] !h-56 md:!h-36 mt-2 md:mt-0 outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
+            labelProps={{
+              className: "hidden",
+            }}
+            // containerProps={{ className: "min-w-[90px]" }}
+          />
         </div>
 
-        <Button className="bg-[#8754AF] mt-3 self-end">ثبت درخواست</Button>
+        <Button className="bg-[#8754AF] mt-3 self-end" placeholder={undefined}>ثبت درخواست</Button>
       </div>
       <div className="container my-10 mx-auto flex flex-col py-7 px-5 lg:flex-row w-11/12 lg:w-10/12 bg-[#FFFFFF] rounded-2xl gap-7 ">
         <p className="font-semibold text-xl text-center text-[#303030] ">
           ثبت تبلیغات پربازده کسب و کار شما{" "}
         </p>
         <div className="flex flex-col space-y-5 p-1 md:flex-row md:space-y-0 md:p-10">
-
-        <WorkwithUsCard img={phone} title="بنر در اپلیکیشن موبایل" text="محصول تیم خلاق آران آسایش آفرینان یعنی کارت تخفیف آران آسایش، حامی اقتصاد خانوار بوده و تلاش شده است." />
-        <WorkwithUsCard img={laptop} title="پیشنهاد ویژه در وبسایت" text="محصول تیم خلاق آران آسایش آفرینان یعنی کارت تخفیف آران آسایش، حامی اقتصاد خانوار بوده و تلاش شده است." />
+          <WorkwithUsCard
+            img={phone}
+            title="بنر در اپلیکیشن موبایل"
+            text="محصول تیم خلاق آران آسایش آفرینان یعنی کارت تخفیف آران آسایش، حامی اقتصاد خانوار بوده و تلاش شده است."
+          />
+          <WorkwithUsCard
+            img={laptop}
+            title="پیشنهاد ویژه در وبسایت"
+            text="محصول تیم خلاق آران آسایش آفرینان یعنی کارت تخفیف آران آسایش، حامی اقتصاد خانوار بوده و تلاش شده است."
+          />
         </div>
-
+      </div>
+      <div className="container my-10 mx-auto flex flex-col py-7 px-5 lg:flex-row w-11/12 lg:w-10/12 bg-[#FFFFFF] rounded-2xl gap-7 ">
+        <p className="font-semibold text-xl text-center text-[#303030] ">
+          راه‌های ارتباطی آران آسایش{" "}
+        </p>
+        <div className="flex flex-col space-y-5 p-1 md:flex-row md:space-y-0 md:p-10">
+          <div>
+            <p>شبکه‌های اجتماعی</p>
+            <div className="flex">
+              <img src={telegram} alt="" />
+              <p>@aranasayesh_ir</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

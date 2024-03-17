@@ -129,7 +129,7 @@ const Blog: React.FC = () => {
          />
           </div>
 
-          <Button className="bg-[#8754AF] mt-3 self-center">مشاهده بیشتر</Button>
+          <Button className="bg-[#8754AF] mt-3 self-center" placeholder={undefined}>مشاهده بیشتر</Button>
 
         </div>
       </section>
