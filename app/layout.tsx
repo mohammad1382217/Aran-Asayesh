@@ -169,7 +169,7 @@ export const FooterWithSocialLinks = () => {
               </p>
             </div>
             <div className="flex flex-col lg:flex-row justify-between items-center lg:w-full gap-y-8">
-              <div className="grid grid-cols-3 justify-between gap-2 gap-y-8 w-full lg:w-auto xl:gap-6 xl:self-end self-start">
+              <div className="grid grid-cols-3 justify-between gap-2 gap-y-8 w-full lg:w-auto xl:gap-6 xl:self-center self-start">
                 {LINKS.map(({ title, items }) => (
                   <ul
                     key={title}

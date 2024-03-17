@@ -1,7 +1,7 @@
 import "./globals.scss";
 import React from "react";
 import Home from "./Home/page";
-import Login from "./login/page";
+import Login from "./Login/page";
 import RootLayout from "./layout";
 import AboutUs from "./AboutUs/page";
 import OurGoals from "./OurGoals/page";
@@ -17,6 +17,8 @@ import {
 } from "react-router-dom";
 import OurHistory from "./OurHistory/page";
 import WorkWithUs from "./WorkwithUs/page";
+import Categories from "./Categories/page";
+import Blog from "./Blogs/page";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +64,14 @@ const router = createBrowserRouter([
       {
         path: "WorkWithUs",
         element: <WorkWithUs />,
+      },
+      {
+        path: "Categories",
+        element: <Categories />,
+      },
+      {
+        path: "Blog",
+        element: <Blog />,
       },
     ],
   },
