@@ -27,7 +27,7 @@ const WorkwithUsCard: React.FC<WorkwithUsCardProps> = ({
       <img src={img} className="md:w-6/12 md:p-5" alt="" />
       <div className="md:w-6/12 md:m-4">
       <span className={` text-sm font-light text-justify`}>{text}</span>
-      <Button className="bg-[#8754AF] mt-5 w-full">ثبت درخواست</Button>
+      <Button className="bg-[#8754AF] mt-5 w-full" placeholder={undefined}>ثبت درخواست</Button>
       </div>
       </div>
     </div>
