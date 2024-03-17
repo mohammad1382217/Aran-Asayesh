@@ -169,7 +169,7 @@ export const FooterWithSocialLinks = () => {
               </p>
             </div>
             <div className="flex flex-col lg:flex-row justify-between items-center lg:w-full gap-y-8">
-              <div className="grid max-[425px]:grid-cols-1 grid-cols-3 justify-between gap-2 gap-y-8 w-full lg:w-auto xl:gap-6 xl:self-end self-start">
+              <div className="grid grid-cols-3 justify-between gap-2 gap-y-8 w-full lg:w-auto xl:gap-6 xl:self-end self-start">
                 {LINKS.map(({ title, items }) => (
                   <ul
                     key={title}
@@ -178,7 +178,7 @@ export const FooterWithSocialLinks = () => {
                     <Typography
                       variant="small"
                       color="blue-gray"
-                      className="mb-3 text-lg xl:text-xl font-semibold text-[#303030]"
+                      className="mb-3 text-lg max-[425px]:text-base xl:text-xl font-semibold text-[#303030]"
                       placeholder={undefined}
                     >
                       {title}
@@ -189,7 +189,7 @@ export const FooterWithSocialLinks = () => {
                           as="a"
                           href={link.link}
                           color="gray"
-                          className="py-1.5 text-base xl:text-lg font-normal transition-colors hover:text-blue-gray-900 items-center lg:items-start"
+                          className="py-1.5 max-[425px]:text-xs text-base xl:text-lg font-normal transition-colors hover:text-blue-gray-900 items-center lg:items-start"
                           placeholder={undefined}
                         >
                           {link.item}
@@ -199,9 +199,9 @@ export const FooterWithSocialLinks = () => {
                   </ul>
                 ))}
               </div>
-              <div className="flex max-[425px]:flex-col items-center">
+              <div className="flex items-center">
                 <div className="flex flex-col items-center justify-center">
-                  <h3 className="block antialiased mb-3 text-lg xl:text-xl font-semibold text-[#303030]">
+                  <h3 className="block antialiased mb-3 max-[425px]:text-base text-lg xl:text-xl font-semibold text-[#303030]">
                     دریافت اپلیکیشن
                   </h3>
 
@@ -210,7 +210,7 @@ export const FooterWithSocialLinks = () => {
                     placeholder={undefined}
                   >
                     <HiDownload className="w-6 h-6" />
-                    <p className="block antialiased text-gray-700 text-base xl:text-lg font-normal transition-colors bg-transparent">
+                    <p className="block antialiased text-gray-700 max-[425px]:text-sm text-base xl:text-lg font-normal transition-colors bg-transparent">
                       دانلود مستقیم
                     </p>
                   </Button>
@@ -219,7 +219,7 @@ export const FooterWithSocialLinks = () => {
                     placeholder={undefined}
                   >
                     <img src={bazar} className="w-8 h-8" />
-                    <p className="block antialiased text-gray-700 text-base xl:text-lg font-normal transition-colors bg-transparent">
+                    <p className="block antialiased text-gray-700 max-[425px]:text-sm text-base xl:text-lg font-normal transition-colors bg-transparent">
                       دانلود از کافه بازار
                     </p>
                   </Button>
