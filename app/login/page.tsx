@@ -9,7 +9,7 @@ const Login = () => {
   const [isSendSms, setisSendSms] = useState(false);
   return (
     <div className="bg-[#F5F5F5] w-[100vw] h-[100vh] flex justify-center items-center">
-      <div className="bg-[#FFFFFF] h-[26rem] w-96 box_shadow rounded-lg relative">
+      <div className="bg-[#FFFFFF] h-[26rem] w-96 mx-5 box_shadow rounded-lg relative">
         <div className="flex items-center justify-center w-full p-2 py-1">
           <img src={logo} className="w-10 h-14" alt="" />
           <p className="text-xl font-semibold text-[#8754AF] mr-3">
