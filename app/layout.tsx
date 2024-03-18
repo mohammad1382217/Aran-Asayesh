@@ -1,17 +1,24 @@
 import React from "react";
-import bazar from "./assets/images/icons/bazar.svg";
-import { VscSend } from "react-icons/vsc";
 import funMenu from "./assets/funMenu.svg";
-import { HiDownload, HiMenu } from "react-icons/hi";
 import logo from "./assets/logo-orginal.svg";
 import closeUpOne from "./assets/close-up-1.svg";
 import beautyMenu from "./assets/beautyMenu.svg";
 import medicalMenu from "./assets/medicalMenu.svg";
+import bazar from "./assets/images/icons/bazar.svg";
+import { HiDownload, HiMenu } from "react-icons/hi";
 import servicesMenu from "./assets/servicesMenu.svg";
-import { Typography, Button, IconButton } from "@material-tailwind/react";
 import ArtAndEduMenu from "./assets/ArtAndEduMenu.svg";
-import { Link, NavLink, Outlet, ScrollRestoration } from "react-router-dom";
+import telegram from "./assets/images/icons/telegram.svg";
 import qr_code from "./assets/mobile-client-qr-code-settings.svg";
+import { Link, Outlet, ScrollRestoration } from "react-router-dom";
+import { Typography, Button, IconButton } from "@material-tailwind/react";
+
+import {
+  Dropdown,
+  Flowbite,
+  DropdownItem,
+  CustomFlowbiteTheme,
+} from "flowbite-react";
 
 const LINKS = [
   {
@@ -124,7 +131,7 @@ const Magnifier = () => {
 const DropDownIcon = () => {
   return (
     <svg
-      className="w-2.5 h-2.5 ms-2.5"
+      className="w-2.5 h-2.5 ms-3"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -189,7 +196,7 @@ export const FooterWithSocialLinks = () => {
                           as="a"
                           href={link.link}
                           color="gray"
-                          className="py-1.5 max-[320px]:text-[0.5rem] max-[425px]:text-xs text-base font-normal transition-colors hover:text-blue-gray-900 items-center lg:items-start"
+                          className="py-1.5 xs:text-xs text-base font-normal transition-colors hover:text-blue-gray-900 items-center lg:items-start"
                           placeholder={undefined}
                         >
                           {link.item}
@@ -199,9 +206,9 @@ export const FooterWithSocialLinks = () => {
                   </ul>
                 ))}
               </div>
-              <div className="flex items-center max-[425px]:justify-between">
+              <div className="flex items-center xs:justify-between">
                 <div className="flex flex-col items-center justify-center">
-                  <h3 className="block antialiased mb-3 max-[425px]:text-base text-base font-semibold text-[#303030]">
+                  <h3 className="block antialiased mb-3 xs:text-base text-base font-semibold text-[#303030]">
                     دریافت اپلیکیشن
                   </h3>
 
@@ -210,7 +217,7 @@ export const FooterWithSocialLinks = () => {
                     placeholder={undefined}
                   >
                     <HiDownload className="w-6 h-6" />
-                    <p className="block antialiased text-gray-700 max-[425px]:text-sm text-base font-normal transition-colors bg-transparent">
+                    <p className="block antialiased text-gray-700 xs:text-sm text-base font-normal transition-colors bg-transparent">
                       دانلود مستقیم
                     </p>
                   </Button>
@@ -219,7 +226,7 @@ export const FooterWithSocialLinks = () => {
                     placeholder={undefined}
                   >
                     <img src={bazar} className="w-8 h-8" />
-                    <p className="block antialiased text-gray-700 max-[425px]:text-sm text-base font-normal transition-colors bg-transparent">
+                    <p className="block antialiased text-gray-700 xs:text-sm text-base font-normal transition-colors bg-transparent">
                       دانلود از کافه بازار
                     </p>
                   </Button>
@@ -251,7 +258,7 @@ export const FooterWithSocialLinks = () => {
                 placeholder={undefined}
               >
                 <svg
-                  className="h-5 w-5"
+                  className="h-6 w-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -269,7 +276,7 @@ export const FooterWithSocialLinks = () => {
                 className="opacity-80 transition-opacity hover:opacity-100"
                 placeholder={undefined}
               >
-                <VscSend className="-rotate-45 w-5 h-5" />
+                <img src={telegram} className="w-6 h-6" />
               </Typography>
             </div>
           </div>
@@ -289,6 +296,14 @@ const RootLayout: React.FC = () => {
   const [openDrawerRight, setOpenDrawerRight] = React.useState(false);
   const setOpenDrawerRightHandler = () => setOpenDrawerRight(!openDrawerRight);
 
+  const customTheme: CustomFlowbiteTheme = {
+    dropdown: {
+      arrowIcon: "mr-2 h-4 w-4",
+      inlineWrapper:
+        "w-auto flex items-center justify-between text-gray-700 hover:text-blue-700 py-2 border-0 p-0",
+    },
+  };
+
   return (
     <>
       <header>
@@ -304,7 +319,7 @@ const RootLayout: React.FC = () => {
                   <HiMenu className="w-6 h-6 text-black" />
                 </IconButton>
               </div>
-              <NavLink to={"/home"}>
+              <Link className="block" to={"/home"}>
                 <div className="flex items-center justify-center gap-2 xl:gap-4">
                   <div className="flex self-center xl:mr-8">
                     <img
@@ -317,7 +332,7 @@ const RootLayout: React.FC = () => {
                     آران آسایش
                   </span>
                 </div>
-              </NavLink>
+              </Link>
               <div className="flex xl:hidden items-center">
                 <Magnifier />
               </div>
@@ -334,7 +349,7 @@ const RootLayout: React.FC = () => {
                 >
                   ورود
                 </Button>
-                <NavLink to="/Application">
+                <Link to="/Application">
                   <Button
                     className="py-2 px-8 flex items-center justify-center rounded-lg border-[#8754AF] text-lg font-semibold bg-[#8754AF] hover:!bg-[#8754AF] text-white gap-2"
                     placeholder={undefined}
@@ -342,7 +357,7 @@ const RootLayout: React.FC = () => {
                     دانلود اپلیکیشن
                     <HiDownload className="w-6 h-6" />
                   </Button>
-                </NavLink>
+                </Link>
               </div>
             </nav>
           </div>
@@ -351,20 +366,13 @@ const RootLayout: React.FC = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="w-full flex items-center justify-between">
               <div className="w-full flex items-center justify-center gap-5">
-                <div>
-                  <button
-                    onMouseEnter={() => setOpenRestaurant(true)}
-                    onMouseLeave={() => setOpenRestaurant(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
-                  >
-                    رستوران و کافی‌شاپ
-                    <DropDownIcon />
-                  </button>
-                  <div
-                    id="dropdownNavbar"
-                    className={`z-30 ${
-                      openRestaurant ? "block" : "hidden"
-                    } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
+                <Flowbite theme={{ theme: customTheme }}>
+                  <Dropdown
+                    inline={true}
+                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
+                    trigger="hover"
+                    label="رستوران و کافی‌شاپ"
+                    dismissOnClick={false}
                   >
                     <div
                       style={{
@@ -372,78 +380,22 @@ const RootLayout: React.FC = () => {
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
                       }}
-                      className="w-full h-72"
+                      className="bg-cover h-72 bottom-1"
                     >
-                      <ul
-                        className="w-44 py-2 text-sm text-gray-700 dark:text-gray-200"
-                        aria-labelledby="dropdownLargeButton"
-                      >
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            رستوران
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            فست فود
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            کافی شاپ
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            باربیکیو
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            صبحانه
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            بیرون بر
-                          </Link>
-                        </li>
-                      </ul>
+                      <DropdownItem className="w-48">رستوران</DropdownItem>
+                      <DropdownItem className="w-48">فست فود</DropdownItem>
+                      <DropdownItem className="w-48">کافی شاپ</DropdownItem>
+                      <DropdownItem className="w-48">باربیکیو</DropdownItem>
+                      <DropdownItem className="w-48">صبحانه</DropdownItem>
+                      <DropdownItem className="w-48">بیرون بر</DropdownItem>
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <button
-                    onMouseEnter={() => setFunMenu(true)}
-                    onMouseLeave={() => setFunMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
-                  >
-                    تفریحی و ورزشی
-                    <DropDownIcon />
-                  </button>
-                  <div
-                    id="dropdownNavbar"
-                    className={`z-30 ${
-                      openFunMenu ? "block" : "hidden"
-                    } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
+                  </Dropdown>
+                  <Dropdown
+                    inline={true}
+                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
+                    trigger="hover"
+                    label="تفریحی و ورزشی"
+                    dismissOnClick={false}
                   >
                     <div
                       style={{
@@ -451,62 +403,26 @@ const RootLayout: React.FC = () => {
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
                       }}
-                      className="w-full h-72"
+                      className="bg-cover h-72 bottom-1"
                     >
-                      <ul
-                        className="w-44 py-2 text-sm text-gray-700 dark:text-gray-200"
-                        aria-labelledby="dropdownLargeButton"
-                      >
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            استخر و پارک‌های آبی
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            تفریحی و سرگرمی
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            باشگاه‌های ورزشی
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            گردشگری
-                          </Link>
-                        </li>
-                      </ul>
+                      <DropdownItem className="w-48">
+                        استخر و پارک‌های آبی
+                      </DropdownItem>
+                      <DropdownItem className="w-48">
+                        تفریحی و سرگرمی
+                      </DropdownItem>
+                      <DropdownItem className="w-48">
+                        باشگاه‌های ورزشی
+                      </DropdownItem>
+                      <DropdownItem className="w-48">گردشگری</DropdownItem>
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <button
-                    onMouseEnter={() => setOpenMedicalMenu(true)}
-                    onMouseLeave={() => setOpenMedicalMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
-                  >
-                    پزشکی و سلامت
-                    <DropDownIcon />
-                  </button>
-                  <div
-                    id="dropdownNavbar"
-                    className={`z-30 ${
-                      openMedicalMenu ? "block" : "hidden"
-                    } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
+                  </Dropdown>
+                  <Dropdown
+                    inline={true}
+                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
+                    trigger="hover"
+                    label="پزشکی و سلامت"
+                    dismissOnClick={false}
                   >
                     <div
                       style={{
@@ -514,86 +430,30 @@ const RootLayout: React.FC = () => {
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
                       }}
-                      className="w-full h-72"
+                      className="bg-cover h-72 bottom-1"
                     >
-                      <ul
-                        className="w-44 py-2 text-sm text-gray-700 dark:text-gray-200"
-                        aria-labelledby="dropdownLargeButton"
-                      >
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            لیزر موهای زائد
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            زیبایی و جوانسازی
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            زیبایی صورت
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            خدمات دندانپزشکی
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            لاغری و تناسب اندام
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            کاشت مو
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            عمل‌های جراحی
-                          </Link>
-                        </li>
-                      </ul>
+                      <DropdownItem className="w-48">
+                        لیزر موهای زائد
+                      </DropdownItem>
+                      <DropdownItem className="w-48">
+                        زیبایی و جوانسازی
+                      </DropdownItem>
+                      <DropdownItem className="w-48">زیبایی صورت</DropdownItem>
+                      <DropdownItem className="w-48">
+                        لاغری و تناسب اندام
+                      </DropdownItem>
+                      <DropdownItem className="w-48">کاشت مو</DropdownItem>
+                      <DropdownItem className="w-48">
+                        عمل‌های جراحی
+                      </DropdownItem>
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <button
-                    onMouseEnter={() => setOpenArtMenu(true)}
-                    onMouseLeave={() => setOpenArtMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
-                  >
-                    هنری و آموزشی
-                    <DropDownIcon />
-                  </button>
-                  <div
-                    id="dropdownNavbar"
-                    className={`z-30 ${
-                      openArtMenu ? "block" : "hidden"
-                    } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
+                  </Dropdown>
+                  <Dropdown
+                    inline={true}
+                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
+                    trigger="hover"
+                    label="هنری و آموزشی"
+                    dismissOnClick={false}
                   >
                     <div
                       style={{
@@ -601,46 +461,20 @@ const RootLayout: React.FC = () => {
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
                       }}
-                      className="w-full h-72"
+                      className="bg-cover h-72 bottom-1"
                     >
-                      <ul
-                        className="w-44 py-2 text-sm text-gray-700 dark:text-gray-200"
-                        aria-labelledby="dropdownLargeButton"
-                      >
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            آتلیه و خدمات چاپ
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            آموزشی
-                          </Link>
-                        </li>
-                      </ul>
+                      <DropdownItem className="w-48">
+                        آتلیه و خدمات چاپ
+                      </DropdownItem>
+                      <DropdownItem className="w-48">آموزشی</DropdownItem>
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <button
-                    onMouseEnter={() => setOpenBeautyMenu(true)}
-                    onMouseLeave={() => setOpenBeautyMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
-                  >
-                    زیبایی و آرایشی
-                    <DropDownIcon />
-                  </button>
-                  <div
-                    id="dropdownNavbar"
-                    className={`z-30 ${
-                      openBeautyMenu ? "block" : "hidden"
-                    } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
+                  </Dropdown>
+                  <Dropdown
+                    inline={true}
+                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
+                    trigger="hover"
+                    label="زیبایی و آرایشی"
+                    dismissOnClick={false}
                   >
                     <div
                       style={{
@@ -648,86 +482,30 @@ const RootLayout: React.FC = () => {
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
                       }}
-                      className="w-full h-72"
+                      className="bg-cover h-72 bottom-1"
                     >
-                      <ul
-                        className="w-44 py-2 text-sm text-gray-700 dark:text-gray-200"
-                        aria-labelledby="dropdownLargeButton"
-                      >
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            خدمات پوست
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            خدمات و کاشت ناخن
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            خدمات مو
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            اسپا و ماساژ
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            خدمات زیبایی و مجلسی
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            آرایش دائم
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            آرایش مردانه و کودکانه
-                          </Link>
-                        </li>
-                      </ul>
+                      <DropdownItem className="w-48">خدمات پوست</DropdownItem>
+                      <DropdownItem className="w-48">
+                        خدمات و کاشت ناخن
+                      </DropdownItem>
+                      <DropdownItem className="w-48">زیبایی صورت</DropdownItem>
+                      <DropdownItem className="w-48">خدمات مو</DropdownItem>
+                      <DropdownItem className="w-48">اسپا و ماساژ</DropdownItem>
+                      <DropdownItem className="w-48">
+                        خدمات زیبایی و مجلسی
+                      </DropdownItem>
+                      <DropdownItem className="w-48">آرایش دائم</DropdownItem>
+                      <DropdownItem className="w-48">
+                        آرایش مردانه و کودکانه
+                      </DropdownItem>
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <button
-                    onMouseEnter={() => setOpenServicesMenu(true)}
-                    onMouseLeave={() => setOpenServicesMenu(false)}
-                    className="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 xl:dark:hover:bg-transparent"
-                  >
-                    خدمات
-                    <DropDownIcon />
-                  </button>
-                  <div
-                    id="dropdownNavbar"
-                    className={`z-30 ${
-                      openServicesMenu ? "block" : "hidden"
-                    } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600`}
+                  </Dropdown>
+                  <Dropdown
+                    inline={true}
+                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
+                    trigger="hover"
+                    label="خدمات"
+                    dismissOnClick={false}
                   >
                     <div
                       style={{
@@ -735,40 +513,18 @@ const RootLayout: React.FC = () => {
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
                       }}
-                      className="w-full h-72"
+                      className="bg-cover h-72 bottom-1"
                     >
-                      <ul
-                        className="w-44 py-2 text-sm text-gray-700 dark:text-gray-200"
-                        aria-labelledby="dropdownLargeButton"
-                      >
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            تشریفات، مراسم و گل
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            خدمات حفاظت و امنیت
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="#"
-                            className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            کارواش
-                          </Link>
-                        </li>
-                      </ul>
+                      <DropdownItem className="w-48">
+                        تشریفات، مراسم و گل
+                      </DropdownItem>
+                      <DropdownItem className="w-48">
+                        خدمات حفاظت و امنیت
+                      </DropdownItem>
+                      <DropdownItem className="w-48">کارواش</DropdownItem>
                     </div>
-                  </div>
-                </div>
+                  </Dropdown>
+                </Flowbite>
               </div>
               <div className="relative">
                 <input

@@ -60,7 +60,7 @@ const Login = () => {
             <p className="text-base font-light text-[#717171] p-2">
               کد پیامک شده را وارد نمایید
             </p>
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between">
               <Input
                 maxLength={1}
                 size="md"
@@ -68,6 +68,7 @@ const Login = () => {
                 labelProps={{
                   className: "hidden",
                 }}
+                containerProps={{ className: "inline-flex w-auto min-w-[40px] w-[40px]" }}
                 crossOrigin={Input}
               />
               <Input
@@ -77,6 +78,7 @@ const Login = () => {
                 labelProps={{
                   className: "hidden",
                 }}
+                containerProps={{ className: "inline-flex w-auto min-w-[40px] w-[40px]" }}
                 crossOrigin={Input}
               />
               <Input
@@ -86,6 +88,7 @@ const Login = () => {
                 labelProps={{
                   className: "hidden",
                 }}
+                containerProps={{ className: "inline-flex w-auto min-w-[40px] w-[40px]" }}
                 crossOrigin={Input}
               />
               <Input
@@ -95,15 +98,17 @@ const Login = () => {
                 labelProps={{
                   className: "hidden",
                 }}
+                containerProps={{ className: "inline-flex w-auto min-w-[40px] w-[40px]" }}
                 crossOrigin={Input}
               />
               <Input
                 maxLength={1}
                 size="md"
-                className="text-center -ml-[-1.4rem] !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
+                className="text-center !w-10 !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
                 labelProps={{
                   className: "hidden",
                 }}
+                containerProps={{ className: "inline-flex w-auto min-w-[40px] w-[40px]" }}
                 crossOrigin={Input}
               />
             </div>
@@ -112,16 +117,17 @@ const Login = () => {
               type="text"
               size="md"
               placeholder="کد معرف"
-              className=" !border-[#C8C8C8] my-3 outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
+              className=" !border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10"
               labelProps={{
                 className: "hidden",
               }}
-              containerProps={{ className: "min-w-[90px]" }}
+              containerProps={{ className: "min-w-[90px] my-3" }}
               crossOrigin={Input}
             />
-            <NavLink to="/Home">
+            <NavLink className="block mt-6" to="/Home">
               <Button
-                className="bg-[#8754AF] w-full mt-6"
+                type="button"
+                className="bg-[#8754AF] w-full"
                 placeholder={undefined}
               >
                 ورود
