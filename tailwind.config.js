@@ -1,14 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 
-export default {
+// add material-tailwind
+import withMT from "@material-tailwind/react/utils/withMT";
+
+export default withMT({
   content: [
-    "./index.html",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "node_modules/flowbite-react/lib/esm/**/*.js",
+    './index.html',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    screens: {
+      'xs': {'max': '425px'},
+      // => @media (max-width: 425px) { ... }
+    },
   },
-  plugins: [require("flowbite/plugin")],
-};
+  plugins: [require('flowbite/plugin')],
+});
