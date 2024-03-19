@@ -11,7 +11,12 @@ import ArtAndEduMenu from "./assets/ArtAndEduMenu.svg";
 import telegram from "./assets/images/icons/telegram.svg";
 import qr_code from "./assets/mobile-client-qr-code-settings.svg";
 import { Link, Outlet, ScrollRestoration } from "react-router-dom";
-import { Typography, Button, IconButton } from "@material-tailwind/react";
+import {
+  Typography,
+  Button,
+  IconButton,
+  Drawer,
+} from "@material-tailwind/react";
 
 import {
   Dropdown,
@@ -19,6 +24,7 @@ import {
   DropdownItem,
   CustomFlowbiteTheme,
 } from "flowbite-react";
+import { AccordionCustomIcon } from "./components/AccordionWithIcon";
 
 const LINKS = [
   {
@@ -169,7 +175,7 @@ export const FooterWithSocialLinks = () => {
                   آران آسایش
                 </Typography>
               </div>
-              <p className="text-base text-[#717171] text-justify">
+              <p className="text-base font-light text-[#717171]text-justify">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
                 استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
                 در ستون و{" "}
@@ -217,18 +223,18 @@ export const FooterWithSocialLinks = () => {
                     placeholder={undefined}
                   >
                     <HiDownload className="w-6 h-6" />
-                    <p className="block antialiased text-gray-700 xs:text-sm text-base font-normal transition-colors bg-transparent">
+                    <span className="block antialiased text-gray-700 xs:text-sm text-base font-normal transition-colors bg-transparent">
                       دانلود مستقیم
-                    </p>
+                    </span>
                   </Button>
                   <Button
                     className="flex items-center shadow-none !bg-transparent text-gray-700 hover:!bg-transparent max-sm:!px-4"
                     placeholder={undefined}
                   >
                     <img src={bazar} className="w-8 h-8" />
-                    <p className="block antialiased text-gray-700 xs:text-sm text-base font-normal transition-colors bg-transparent">
+                    <span className="block antialiased text-gray-700 xs:text-sm text-base font-normal transition-colors bg-transparent">
                       دانلود از کافه بازار
-                    </p>
+                    </span>
                   </Button>
                 </div>
 
@@ -287,12 +293,6 @@ export const FooterWithSocialLinks = () => {
 };
 
 const RootLayout: React.FC = () => {
-  const [openRestaurant, setOpenRestaurant] = React.useState(false);
-  const [openFunMenu, setFunMenu] = React.useState(false);
-  const [openMedicalMenu, setOpenMedicalMenu] = React.useState(false);
-  const [openArtMenu, setOpenArtMenu] = React.useState(false);
-  const [openBeautyMenu, setOpenBeautyMenu] = React.useState(false);
-  const [openServicesMenu, setOpenServicesMenu] = React.useState(false);
   const [openDrawerRight, setOpenDrawerRight] = React.useState(false);
   const setOpenDrawerRightHandler = () => setOpenDrawerRight(!openDrawerRight);
 
@@ -318,6 +318,66 @@ const RootLayout: React.FC = () => {
                 >
                   <HiMenu className="w-6 h-6 text-black" />
                 </IconButton>
+                <Drawer
+                  placement="right"
+                  open={openDrawerRight}
+                  onClose={() => setOpenDrawerRightHandler()}
+                  className="w-60"
+                  placeholder={undefined}
+                >
+                  <div className="flex flex-col items-center p-6 gap-8">
+                    <Button
+                      className="w-full py-2 px-3 rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white"
+                      placeholder={undefined}
+                    >
+                      ورود به حساب کاربری
+                    </Button>
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="text-lg font-semibold text-[#8754AF]">
+                        خرید گیفت کارد
+                      </span>
+                      <Gift />
+                    </div>
+                    <div className="flex flex-col">
+                      <AccordionCustomIcon
+                        headerTitle={"رستوران و کافی‌شاپ"}
+                        Id={1}
+                      >
+                        <></>
+                      </AccordionCustomIcon>
+                      <AccordionCustomIcon
+                        headerTitle={"تفریحی و ورزشی"}
+                        Id={2}
+                      >
+                        <></>
+                      </AccordionCustomIcon>
+                      <AccordionCustomIcon
+                        headerTitle={"پزشکی و سلامت"}
+                        Id={3}
+                      >
+                        <></>
+                      </AccordionCustomIcon>
+                      <AccordionCustomIcon
+                        headerTitle={"هنری و آموزشی"}
+                        Id={4}
+                      >
+                        <></>
+                      </AccordionCustomIcon>
+                      <AccordionCustomIcon
+                        headerTitle={"زیبایی و آرایشی"}
+                        Id={5}
+                      >
+                        <></>
+                      </AccordionCustomIcon>
+                      <AccordionCustomIcon
+                        headerTitle={"خدمات"}
+                        Id={6}
+                      >
+                        <></>
+                      </AccordionCustomIcon>
+                    </div>
+                  </div>
+                </Drawer>
               </div>
               <Link className="block" to={"/home"}>
                 <div className="flex items-center justify-center gap-2 xl:gap-4">
@@ -343,12 +403,14 @@ const RootLayout: React.FC = () => {
                   </span>
                   <Gift />
                 </div>
+                <Link to="/ProfileOne">
                 <Button
                   className="py-2 rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white"
                   placeholder={undefined}
                 >
                   ورود
                 </Button>
+                </Link>
                 <Link to="/Application">
                   <Button
                     className="py-2 px-8 flex items-center justify-center rounded-lg border-[#8754AF] text-lg font-semibold bg-[#8754AF] hover:!bg-[#8754AF] text-white gap-2"

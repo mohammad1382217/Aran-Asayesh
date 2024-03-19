@@ -11,16 +11,16 @@ interface CardComponent {
 const CardComponent: React.FC<CardComponent> = ({ text, img, rate, offer }) => {
   return (
     <Card
-      className="max-w-64 md:max-w-60 h-64 card cursor-pointer"
+      className="max-w-64 md:max-w-60 lg:max-w-72 lg:h-auto h-64 card cursor-pointer"
       imgSrc={img} imgAlt=""
     >
       <h5 className="text-lg font-light tracking-tight text-[#303030] dark:text-white self-start pr-2">
         {text}
       </h5>
 
-      <div className="w-[90%] md:w-[80%] flex items-center justify-between self-start pr-2">
+      <div className="w-[90%] md:w-[80%] lg:w-[95%] flex items-center justify-between self-start pr-2">
         <div className="flex">
-          <p className="text-base font-extralight text-[#717171]">امتیاز:</p>
+          <span className="text-base font-extralight text-[#717171]">امتیاز:</span>
           <span className="ml-1 mr-1 text-base font-extralight text-[#717171]">
             {rate}
           </span>

@@ -113,6 +113,7 @@ const Home: React.FC = () => {
             <div className="w-full my-3 flex flex-col justify-center items-center mt-10">
               <LineSpace
                 color={`#717171`}
+                ClassName={"text-base"}
                 text={"رستوران و کافی‌شاپ"}
                 icon={<img className="w-7 h-7" src={foodIcon}></img>}
                 showMore={true}
@@ -282,6 +283,7 @@ const Home: React.FC = () => {
             </div>
             <div className="mt-10 mx-auto">
               <LineSpace
+                ClassName={""}
                 color={`#717171`}
                 text={"خدمات"}
                 icon={<img className="w-7 h-7" src={teacher}></img>}
@@ -319,13 +321,13 @@ const Home: React.FC = () => {
       </section>
       <section className="w-full flex flex-col justify-center items-center xl:h-[327px] ">
         <div className="container mx-auto px-8 xl:px-4">
-          <div className="w-full md:h-72 lg:h-80 bg-white flex flex-row justify-center items-center">
-            <div className="w-full md:flex md:justify-center md:gap-8">
-              <div className="order-2 md:w-1/2 md:-mr-16 md:flex md:justify-center md:flex-col">
-                <h1 className="text-lg font-semibold text-[#303030] p-5 md:p-2">
+          <div className="w-full  lg:h-80 bg-white flex flex-row justify-center items-center">
+            <div className="w-full lg:flex lg:justify-center lg:gap-8">
+              <div className="order-2 lg:w-10/12 lg:-mr-32 lg:flex lg:justify-center lg:flex-col">
+                <h1 className="text-xl font-semibold text-[#303030] p-5 lg:p-2">
                   با اپلیکیشن آران آسایش، ساده‌تر از همیشه تخفیف بگیر!
                 </h1>
-                <p className="text-sm font-light text-[#717171] text-justify">
+                <p className="text-base font-light text-[#717171] text-justify px-4 pb-6">
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
                   با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
                   مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
@@ -338,50 +340,50 @@ const Home: React.FC = () => {
               </div>
               <img
                 src={app_phone}
-                className="md:bottom-10 md:relative hidden md:inline-flex md:order-1"
+                className="lg:bottom-10 lg:-right-16 lg:w-5/12 lg:relative hidden lg:inline-flex lg:order-1"
                 alt=""
               />
-              <div className="w-[295px] md:flex flex-col hidden items-center md:justify-center md:order-3 gap-5">
+              <div className="w-[320px] lg:flex flex-col hidden items-center lg:justify-center lg:order-3 gap-5">
                 <Button
                   className="w-full flex bg-[#F5F5F5] text-gray-700 hover:!bg-transparent items-center justify-center"
                   placeholder={undefined}
                 >
                   <HiDownload className="w-6 h-6 text-[#7F38B7]" />
-                  <p className="block antialiased text-gray-700 text-base md:text-base font-semibold transition-colors bg-transparent">
+                  <span className="block antialiased text-gray-700 text-base lg:text-sm font-semibold transition-colors bg-transparent">
                     دانلود مستقیم
-                  </p>
+                  </span>
                 </Button>
                 <Button
                   className="w-full flex bg-[#F5F5F5] text-gray-700 hover:!bg-transparent items-center justify-center"
                   placeholder={undefined}
                 >
                   <img src={bazar} className="w-8 h-8" />
-                  <p className="block antialiased text-gray-700 text-base md:text-base font-semibold transition-colors bg-transparent">
+                  <span className="block antialiased text-gray-700 text-base lg:text-xs font-semibold transition-colors bg-transparent">
                     دانلود از کافه بازار
-                  </p>
+                  </span>
                 </Button>
               </div>
               {/* small size */}
-              <div className="flex flex-row justify-around items-center md:hidden">
-                <img src={app_phone} className="w-1/2 md:order-1" alt="" />
-                <div className="my-10 flex flex-col md:order-3 w-1/2">
+              <div className="flex flex-row justify-around items-center lg:hidden">
+                <img src={app_phone} className="w-1/2 lg:order-1" alt="" />
+                <div className="flex flex-col items-center justify-center lg:order-3 w-1/2 gap-5 !py-6">
                   <Button
-                    className="flex bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.1rem] py-[0.8rem] items-center justify-center"
+                    className="w-full flex bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.1rem] py-[0.8rem] items-center justify-center"
                     placeholder={undefined}
                   >
                     <HiDownload className="w-6 h-6 text-[#7F38B7]" />
-                    <p className="block antialiased text-gray-700 text-base md:text-base font-semibold transition-colors bg-transparent">
+                    <span className="block antialiased text-gray-700 text-xs lg:text-base font-semibold transition-colors bg-transparent">
                       دانلود مستقیم
-                    </p>
+                    </span>
                   </Button>
                   <Button
-                    className="flex mt-5 bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.1rem] py-[0.8rem] items-center justify-center"
+                    className="w-full flex bg-[#F5F5F5] text-gray-700 hover:!bg-transparent px-[0.1rem] py-[0.8rem] items-center justify-center"
                     placeholder={undefined}
                   >
                     <img src={bazar} className="w-8 h-8" />
-                    <p className="block antialiased text-gray-700 text-xs md:text-base font-semibold transition-colors bg-transparent">
+                    <span className="block antialiased text-gray-700 text-xs lg:text-base font-semibold transition-colors bg-transparent">
                       دانلود از کافه بازار
-                    </p>
+                    </span>
                   </Button>
                 </div>
               </div>

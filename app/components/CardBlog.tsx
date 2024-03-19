@@ -17,12 +17,12 @@ const CardComponentBlog: React.FC<CardComponentBlog> = ({ text,title, img, date 
       <h5 className="text-lg font-light tracking-tight text-[#303030] dark:text-white self-start pr-5 mt-4">
         {title}
       </h5>
-      <p className="text-[#303030] text-base font-thin text-justify  px-5 ml-5 -mt-2">
+      <p className="text-base font-light text-[#303030] text-justify px-5 ml-5 -mt-2">
         {text}
       </p>
       <div className="w-[90%] md:w-[80%] -mt-3 flex flex-row items-center justify-between self-start pr-2">
         <div className="flex">
-          <p className="text-base font-extralight text-[#C8C8C8]">{date}</p>
+          <span className="text-base font-extralight text-[#C8C8C8]">{date}</span>
         </div>
         <span className="mr-2 text-sm md:text-base font-extralight text-[#C8C8C8]">
         ادامه مطلب

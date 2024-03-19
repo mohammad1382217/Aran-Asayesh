@@ -3,23 +3,24 @@ import React from "react";
 const LineSpace: React.FC<LineSpaceProps> = ({
   text,
   icon,
+  ClassName,
   color,
   showMore,
 }) => {
   return (
     <div
-      className="w-full flex items-center justify-center md:px-3"
+      className={`w-full flex items-center justify-center md:px-3 ${ClassName}`}
       style={{ color: color }}
     >
       {icon}
-      <span className={`mx-2 text-lg font-semibold`}>{text}</span>
+      <span className={`sm:mx-2 mr-2 text-sm sm:text-lg font-semibold`}>{text}</span>
       {showMore ? (
         <>
           <div
             style={{ borderColor: color }}
-            className="flex-1 md:border-b-4 md:border-dotted md:border-3 mx-3"
+            className="flex-1 md:border-b-4 md:border-dotted md:border-3 sm:mx-3"
           ></div>
-          <button className="text-sm font-thin"> مشاهده بیشتر &gt;</button>
+          <button className="text-xs sm:text-sm font-thin"> مشاهده بیشتر &gt;</button>
         </>
       ) : null}
     </div>
@@ -33,5 +34,6 @@ interface LineSpaceProps {
   text: string;
   icon: React.ReactNode;
   color: string;
-  showMore: boolean;
+  showMore?: boolean;
+  ClassName?:string
 }

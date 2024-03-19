@@ -1,29 +1,55 @@
-import { Input } from "@material-tailwind/react";
+import {
+  CustomFlowbiteTheme,
+  Flowbite,
+  FlowbiteTextInputSizes,
+  TextInput,
+} from "flowbite-react";
 import React from "react";
 
-interface C_Input {
+interface InputProps {
   //   text: string;
-  type: string;
-  size: any;
-  placeholder: string;
-  ClassName: string;
+  Name?: string,
+  sizing?: keyof FlowbiteTextInputSizes;
+  type?: React.HTMLInputTypeAttribute;
+  placeholder?: string;
+  ClassName?: string;
+  maxLength?: number;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>
 }
 
-const C_Input: React.FC<C_Input> = ({ type, size, placeholder, ClassName }) => {
+const Input: React.FC<InputProps> = ({
+  type,
+  placeholder,
+  sizing,
+  ClassName,
+  maxLength,
+  Name,
+  onChange,
+}) => {
+  const customTheme: CustomFlowbiteTheme = {
+    textInput: {
+      base: "w-full",
+      field: {
+        input: {
+          base: `w-full !border-[#C8C8C8] outline-none shadow-none bg-white focus:border-2 text-[#C8C8C8] placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] focus:!border-[#7F38B7] focus:ring-[#8754AF]/10 ${ClassName}`,
+        },
+      },
+    },
+  };
+
   return (
-    <Input
-      // value={text}
-      type={type}
-      size={size}
-      placeholder={placeholder}
-      className={`!border-[#C8C8C8] outline-none shadow-none bg-white border-2 text-[#C8C8C8]  placeholder:text-[#C8C8C8] focus:text-[#7F38B7] hover:!border-[#8754AF] hover:!border-t-[#8754AF] focus:!border-[#7F38B7] focus:!border-t-[#7F38B7] focus:ring-[#8754AF]/10 ${ClassName}`}
-      labelProps={{
-        className: "hidden",
-      }}
-      containerProps={{ className: "min-w-[90px]" }}
-      crossOrigin={Input}
-    />
+    <Flowbite theme={{ theme: customTheme }}>
+      <TextInput
+        // value={text}
+        maxLength={maxLength}
+        name={Name}
+        sizing={sizing}
+        type={type}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
+    </Flowbite>
   );
 };
 
-export default C_Input;
+export default Input;

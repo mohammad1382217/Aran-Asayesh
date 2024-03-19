@@ -2,7 +2,7 @@ import "./globals.scss";
 import React from "react";
 import Home from "./Home/page";
 import Blog from "./Blogs/page";
-import Login from "./Login/page";
+import Login from "./login/page";
 import Page404 from "./404/page";
 import RootLayout from "./layout";
 import AboutUs from "./AboutUs/page";
@@ -13,7 +13,7 @@ import ReactDOM from "react-dom/client";
 import Questions from "./Questions/page";
 import OurHistory from "./OurHistory/page";
 import WorkWithUs from "./WorkwithUs/page";
-import Categories from "./Categories/page";
+import Categories from "./categories/page";
 import Application from "./Application/page";
 import BuySubscription from "./BuySubscription/page";
 import {
@@ -21,6 +21,8 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
+import ProfileOne from "./ProfileOne/page";
+import ProfileTwo from "./profileTwo/page";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +80,14 @@ const router = createBrowserRouter([
       {
         path: "BlogPost",
         element: <BlogPost />,
+      },
+      {
+        path: "ProfileOne",
+        element: <ProfileOne />,
+      },
+      {
+        path: "ProfileTwo",
+        element: <ProfileTwo />,
       },
     ],
   },
