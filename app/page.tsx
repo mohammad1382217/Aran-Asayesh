@@ -23,6 +23,10 @@ import {
 } from "react-router-dom";
 import ProfileOne from "./ProfileOne/page";
 import ProfileTwo from "./profileTwo/page";
+import Information from "./(Panel)/Information/page";
+import RootLayoutAdmin from "./(Panel)/layout";
+import DiscountHistory from "./(Panel)/DiscountHistory/page";
+import ConfirmCode from "./(Panel)/ConfirmCode/page";
 
 const router = createBrowserRouter([
   {
@@ -88,6 +92,24 @@ const router = createBrowserRouter([
       {
         path: "ProfileTwo",
         element: <ProfileTwo />,
+      },
+    ],
+  },
+  {
+    path: "admin/",
+    element: <RootLayoutAdmin />,
+    children: [
+      {
+        path: "Information",
+        element: <Information />,
+      },
+      {
+        path: "DiscountHistory",
+        element: <DiscountHistory />,
+      },
+      {
+        path: "ConfirmCode",
+        element: <ConfirmCode />,
       },
     ],
   },

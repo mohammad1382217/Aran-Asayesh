@@ -125,7 +125,7 @@ const BuySubscription = () => {
               header={"اشتراک زمرد"}
               headerClass="text-[#BDFFDB] xs:text-3xl text-4xl"
               text={
-                <p className="text-base font-light text-[#303030] text-justify">
+                <p className="text-base font-light text-white text-justify">
                   اگر شما اشتراک الماس کارت تخفیف آران آسایش را دریافت کنید دیگر
                   نیازی به اشتراک‌های دیگر ندارید. فقط کافیست یک کارت الماس را
                   تهیه و از هر چهار نوع خدمات{" "}

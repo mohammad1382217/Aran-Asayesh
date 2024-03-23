@@ -8,21 +8,30 @@ import { Input as MaterialInput } from "@material-tailwind/react";
 
 const Login = () => {
   const [isSendSms, setisSendSms] = useState(false);
-  const firstInputRef = useRef(null);
-  const secondInputRef = useRef(null);
-  const thirdInputRef = useRef(null);
-  const fourthInputRef = useRef(null);
-  const fifthInputRef = useRef(null);
+  const firstInputRef = useRef<HTMLInputElement>(null);
+  const secondInputRef = useRef<HTMLInputElement>(null);
+  const thirdInputRef = useRef<HTMLInputElement>(null);
+  const fourthInputRef = useRef<HTMLInputElement>(null);
+  const fifthInputRef = useRef<HTMLInputElement>(null);
 
-  function handleInputFocus(e:any) {
-    if (e.target.value.length === 1) {
-      const form = e.target.form;
-      const index = [...form].indexOf(e.target);
-      if (index < form.length - 1) {
-        form.elements[index + 1].focus();
+  const handleInputFocus = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    const { value } = target;
+
+    if (value.length === 1 && e.key !== "Delete" && e.key !== "Backspace") {
+      const form = target.form;
+      if (form) {
+        const index = [...form.elements].indexOf(target);
+        if (index !== -1 && index < form.elements.length - 1) {
+          const nextElement = form.elements[index + 1] as HTMLInputElement;
+          if (nextElement) {
+            nextElement.focus();
+          }
+        }
       }
     }
-  }
+  };
+
   return (
     <div className="bg-[#F5F5F5] w-[100vw] h-[100vh] flex justify-center items-center">
       <div className="bg-[#FFFFFF] h-[26rem] w-96 mx-5 box_shadow rounded-lg relative">
@@ -82,7 +91,7 @@ const Login = () => {
                 containerProps={{
                   className: "inline-flex w-auto min-w-[40px] !w-[40px]",
                 }}
-                crossOrigin={Input}
+                crossOrigin={undefined}
                 onKeyUp={handleInputFocus}
                 ref={firstInputRef}
               />
@@ -96,7 +105,7 @@ const Login = () => {
                 containerProps={{
                   className: "inline-flex w-auto min-w-[40px] !w-[40px]",
                 }}
-                crossOrigin={Input}
+                crossOrigin={undefined}
                 onKeyUp={handleInputFocus}
                 ref={secondInputRef}
               />
@@ -110,7 +119,7 @@ const Login = () => {
                 containerProps={{
                   className: "inline-flex w-auto min-w-[40px] !w-[40px]",
                 }}
-                crossOrigin={Input}
+                crossOrigin={undefined}
                 onKeyUp={handleInputFocus}
                 ref={thirdInputRef}
               />
@@ -124,7 +133,7 @@ const Login = () => {
                 containerProps={{
                   className: "inline-flex w-auto min-w-[40px] !w-[40px]",
                 }}
-                crossOrigin={Input}
+                crossOrigin={undefined}
                 onKeyUp={handleInputFocus}
                 ref={fourthInputRef}
               />
@@ -138,7 +147,7 @@ const Login = () => {
                 containerProps={{
                   className: "inline-flex w-auto min-w-[40px] !w-[40px]",
                 }}
-                crossOrigin={Input}
+                crossOrigin={undefined}
                 onKeyUp={handleInputFocus}
                 ref={fifthInputRef}
               />

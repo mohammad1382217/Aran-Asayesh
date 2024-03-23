@@ -16,7 +16,7 @@ export const BreadcrumbsWithIcon: React.FC<BreadcrumbsWithIconProps> = ({
             {item}
           </Link>
         ) : (
-          <Link to="#" className="text-[#8754AF]">{item}</Link>
+          <Link key={index} to="#" className="text-[#8754AF]">{item}</Link>
         )
       )}
     </Breadcrumbs>

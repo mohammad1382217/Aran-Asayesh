@@ -11,6 +11,7 @@ import ImageHomeHeaderLeft1 from "../assets/images/dentist.png";
 import { Button, Chip, Typography } from "@material-tailwind/react";
 import presentage from "../assets/images/icons/percentage_purple.svg";
 import { BreadcrumbsWithIcon } from "../components/BreadcrumbsWithIcon";
+import { Link } from "react-router-dom";
 
 const Star = ({ className }: { className: string }) => {
   return (
@@ -143,19 +144,15 @@ const Services = () => {
                   اطلاعات تماس این مجموعه
                 </h3>
                 <div className="lg:flex gap-4 text-[#7F38B7] justify-center hidden">
-                  <Typography
-                    as="a"
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex !flex-shrink-0 opacity-80 transition-opacity hover:opacity-100"
-                    placeholder={undefined}
                   >
                     <img src={telegram} className="w-6 h-6" />
-                  </Typography>
-                  <Typography
-                    as="a"
-                    href="#"
+                  </Link>
+                  <Link
+                    to="#"
                     className="opacity-80 transition-opacity hover:opacity-100"
-                    placeholder={undefined}
                   >
                     <svg
                       className="h-6 w-6"
@@ -169,32 +166,26 @@ const Services = () => {
                         clipRule="evenodd"
                       />
                     </svg>
-                  </Typography>
-                  <Typography
-                    as="a"
-                    href="#"
+                  </Link>
+                  <Link
+                    to="#"
                     className="flex !flex-shrink-0 opacity-80 transition-opacity hover:opacity-100"
-                    placeholder={undefined}
                   >
                     <img className="w-6 h-6" src={eitaa} alt="" />
-                  </Typography>
+                  </Link>
                 </div>
               </div>
               <div className="w-full flex flex-col-reverse lg:flex-col justify-between gap-4">
                 <div className="flex gap-4 text-[#7F38B7] justify-center lg:hidden">
-                  <Typography
-                    as="a"
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex !flex-shrink-0 opacity-80 transition-opacity hover:opacity-100"
-                    placeholder={undefined}
                   >
                     <img src={telegram} className="w-6 h-6" />
-                  </Typography>
-                  <Typography
-                    as="a"
-                    href="#"
+                  </Link>
+                  <Link
+                    to="#"
                     className="opacity-80 transition-opacity hover:opacity-100"
-                    placeholder={undefined}
                   >
                     <svg
                       className="h-6 w-6"
@@ -208,15 +199,13 @@ const Services = () => {
                         clipRule="evenodd"
                       />
                     </svg>
-                  </Typography>
-                  <Typography
-                    as="a"
-                    href="#"
+                  </Link>
+                  <Link
+                    to="#"
                     className="flex !flex-shrink-0 opacity-80 transition-opacity hover:opacity-100"
-                    placeholder={undefined}
                   >
                     <img className="w-6 h-6" src={eitaa} alt="" />
-                  </Typography>
+                  </Link>
                 </div>
                 <div className="w-full flex flex-col justify-between gap-4">
                   <span className="text-[#303030] text-lg font-light">

@@ -1,25 +1,16 @@
 import React from "react";
-import { CustomFlowbiteTheme, Flowbite, ListGroup } from "flowbite-react";
-import { BreadcrumbsWithIcon } from "../components/BreadcrumbsWithIcon";
+import { Button } from "@material-tailwind/react";
+import FlowbiteListGroup from "../components/ListGroup";
 import copy from "../assets/images/icons/copy to clipboard.svg";
 import qr_code from "../assets/mobile-client-qr-code-settings.svg";
-import { Button } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { BreadcrumbsWithIcon } from "../components/BreadcrumbsWithIcon";
 
 const ProfileOne: React.FC = () => {
-  const customTheme: CustomFlowbiteTheme = {
-    listGroup: {
-      root: {
-        base: "w-full flex flex-col items-center justify-items-center h-max list-none rounded-lg border border-gray-200 bg-white text-sm font-medium text-gray-900 lg:w-48",
-      },
-      item: {
-        link: {
-          base: "flex items-center justify-center w-full border-b border-gray-200 py-4 px-4",
-        },
-        base: "w-full flex items-center justify-center xl:w-48",
-      },
-    },
-  };
+  const List = [
+    { title: "اطلاعات حساب", link: "/ProfileOne" },
+    { title: "تاریخچه تخفیف", link: "/ProfileTwo" },
+    { title: "خروج از حساب", link: "/Login" },
+  ];
 
   return (
     <>
@@ -33,19 +24,7 @@ const ProfileOne: React.FC = () => {
       <section className="bg-[#F5F5F5] w-full flex flex-col justify-center py-8">
         <div className="flex flex-col lg:flex-row container mx-auto px-4 lg:px-8 gap-8">
           <section className="flex justify-center">
-            <Flowbite theme={{ theme: customTheme }}>
-              <ListGroup>
-                <Link className="w-full flex text-center" to={"/ProfileOne"}>
-                  <ListGroup.Item>اطلاعات حساب</ListGroup.Item>
-                </Link>
-                <Link className="w-full flex text-center" to={"/ProfileTwo"}>
-                  <ListGroup.Item>تاریخچه تخفیف</ListGroup.Item>
-                </Link>
-                <Link className="w-full flex text-center" to={"/Login"}>
-                  <ListGroup.Item>خروج از حساب</ListGroup.Item>
-                </Link>
-              </ListGroup>
-            </Flowbite>
+            <FlowbiteListGroup List={List} />
           </section>
           <section className="bg-white flex flex-col p-12 rounded-2xl w-full sm:flex-col items-center justify-between gap-5">
             <div className="w-full flex items-center justify-between gap-4">

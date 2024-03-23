@@ -1,4 +1,5 @@
 import React from "react";
+import Input from "./components/input";
 import funMenu from "./assets/funMenu.svg";
 import logo from "./assets/logo-orginal.svg";
 import closeUpOne from "./assets/close-up-1.svg";
@@ -7,32 +8,27 @@ import medicalMenu from "./assets/medicalMenu.svg";
 import bazar from "./assets/images/icons/bazar.svg";
 import { HiDownload, HiMenu } from "react-icons/hi";
 import servicesMenu from "./assets/servicesMenu.svg";
+import FlowbiteDropdown from "./components/Dropdown";
 import ArtAndEduMenu from "./assets/ArtAndEduMenu.svg";
 import telegram from "./assets/images/icons/telegram.svg";
 import qr_code from "./assets/mobile-client-qr-code-settings.svg";
 import { Link, Outlet, ScrollRestoration } from "react-router-dom";
+import { AccordionCustomIcon } from "./components/AccordionWithIcon";
 import {
   Typography,
   Button,
   IconButton,
   Drawer,
+  ThemeProvider,
 } from "@material-tailwind/react";
-
-import {
-  Dropdown,
-  Flowbite,
-  DropdownItem,
-  CustomFlowbiteTheme,
-} from "flowbite-react";
-import { AccordionCustomIcon } from "./components/AccordionWithIcon";
 
 const LINKS = [
   {
     title: "همکاری با ما",
     items: [
       { item: "زیر مجموعه شدن", link: "WorkWithUs" },
-      { item: "تبلیغات", link: "Services" },
-      { item: "خدمات ما", link: "WorkWithUs" },
+      { item: "تبلیغات", link: "Information" },
+      { item: "خدمات ما", link: "Services" },
     ],
   },
   {
@@ -134,32 +130,12 @@ const Magnifier = () => {
   );
 };
 
-const DropDownIcon = () => {
-  return (
-    <svg
-      className="w-2.5 h-2.5 ms-3"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 10 6"
-    >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="m1 1 4 4 4-4"
-      />
-    </svg>
-  );
-};
-
 export const FooterWithSocialLinks = () => {
   return (
     <footer className="w-full">
       <section className="bg-[#ECECEC] w-full flex items-center justify-center py-6 lg:py-4">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col xl:flex-row justify-between gap-y-6 gap-x-8 py-8">
+          <div className="flex flex-col xl:flex-row justify-between gap-y-6 gap-x-20 py-8">
             <div className="w-full xl:max-w-80 flex flex-col items-center md:items-start justify-center gap-2">
               <div className="md:w-full flex items-center justify-center gap-2">
                 <img
@@ -198,15 +174,13 @@ export const FooterWithSocialLinks = () => {
                     </Typography>
                     {items.map((link) => (
                       <li key={link.item}>
-                        <Typography
-                          as="a"
-                          href={link.link}
+                        <Link
+                          to={link.link}
                           color="gray"
-                          className="py-1.5 xs:text-xs text-base font-normal transition-colors hover:text-blue-gray-900 items-center lg:items-start"
-                          placeholder={undefined}
+                          className="block antialiased font-sans text-gray-700 py-1.5 xs:text-xs text-base font-normal transition-colors hover:text-blue-gray-900 items-center lg:items-start"
                         >
                           {link.item}
-                        </Typography>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -257,11 +231,9 @@ export const FooterWithSocialLinks = () => {
               </Link>
             </Typography>
             <div className="flex gap-4 text-purple-500 sm:justify-center">
-              <Typography
-                as="a"
-                href="#"
-                className="opacity-80 transition-opacity hover:opacity-100"
-                placeholder={undefined}
+              <Link
+                to="#"
+                className="block antialiased py-1.5 xs:text-xs text-base font-normal hover:text-blue-gray-900 items-center lg:items-start opacity-80 transition-opacity hover:opacity-100"
               >
                 <svg
                   className="h-6 w-6"
@@ -275,15 +247,13 @@ export const FooterWithSocialLinks = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </Typography>
-              <Typography
-                as="a"
-                href="#"
-                className="opacity-80 transition-opacity hover:opacity-100"
-                placeholder={undefined}
+              </Link>
+              <Link
+                to="#"
+                className="block antialiased py-1.5 xs:text-xs text-base font-normal hover:text-blue-gray-900 items-center lg:items-start opacity-80 transition-opacity hover:opacity-100"
               >
                 <img src={telegram} className="w-6 h-6" />
-              </Typography>
+              </Link>
             </div>
           </div>
         </div>
@@ -296,11 +266,15 @@ const RootLayout: React.FC = () => {
   const [openDrawerRight, setOpenDrawerRight] = React.useState(false);
   const setOpenDrawerRightHandler = () => setOpenDrawerRight(!openDrawerRight);
 
-  const customTheme: CustomFlowbiteTheme = {
-    dropdown: {
-      arrowIcon: "mr-2 h-4 w-4",
-      inlineWrapper:
-        "w-auto flex items-center justify-between text-gray-700 hover:text-blue-700 py-2 border-0 p-0",
+  const theme = {
+    drawer: {
+      styles: {
+        base: {
+          overlay: {
+            position: "fixed",
+          },
+        },
+      },
     },
   };
 
@@ -311,73 +285,76 @@ const RootLayout: React.FC = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <nav className="w-full flex xl:items-center sm:justify-between justify-evenly gap-2">
               <div className="inline-flex items-center xl:hidden">
-                <IconButton
-                  onClick={() => setOpenDrawerRightHandler()}
-                  className="bg-transparent shadow-none hover:shadow-none z-40"
-                  placeholder={undefined}
-                >
-                  <HiMenu className="w-6 h-6 text-black" />
-                </IconButton>
-                <Drawer
-                  placement="right"
-                  open={openDrawerRight}
-                  onClose={() => setOpenDrawerRightHandler()}
-                  className="w-60"
-                  placeholder={undefined}
-                >
-                  <div className="flex flex-col items-center p-6 gap-8">
-                    <Button
-                      className="w-full py-2 px-3 rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white"
-                      placeholder={undefined}
-                    >
-                      ورود به حساب کاربری
-                    </Button>
-                    <div className="flex items-center justify-center gap-2">
-                      <span className="text-lg font-semibold text-[#8754AF]">
-                        خرید گیفت کارد
-                      </span>
-                      <Gift />
+                <ThemeProvider value={theme}>
+                  <IconButton
+                    onClick={() => setOpenDrawerRightHandler()}
+                    className="bg-transparent shadow-none hover:shadow-none z-40"
+                    placeholder={undefined}
+                  >
+                    <HiMenu className="w-6 h-6 text-black" />
+                  </IconButton>
+                  <Drawer
+                    placement="right"
+                    open={openDrawerRight}
+                    onClose={() => setOpenDrawerRightHandler()}
+                    className={`w-60 ${
+                      openDrawerRight ? "overflow-hidden" : null
+                    }`}
+                    placeholder={undefined}
+                  >
+                    <div className="flex flex-col items-center p-6 gap-8">
+                      <Button
+                        className="w-full py-2 px-3 rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white"
+                        placeholder={undefined}
+                      >
+                        ورود به حساب کاربری
+                      </Button>
+                      <Link className="cursor-pointer" to={"/BuySubscription"}>
+                        <div className="flex items-center justify-center gap-2">
+                          <span className="text-lg font-semibold text-[#8754AF]">
+                            خرید گیفت کارد
+                          </span>
+                          <Gift />
+                        </div>
+                      </Link>
+                      <div className="flex flex-col">
+                        <AccordionCustomIcon
+                          headerTitle={"رستوران و کافی‌شاپ"}
+                          Id={1}
+                        >
+                          <></>
+                        </AccordionCustomIcon>
+                        <AccordionCustomIcon
+                          headerTitle={"تفریحی و ورزشی"}
+                          Id={2}
+                        >
+                          <></>
+                        </AccordionCustomIcon>
+                        <AccordionCustomIcon
+                          headerTitle={"پزشکی و سلامت"}
+                          Id={3}
+                        >
+                          <></>
+                        </AccordionCustomIcon>
+                        <AccordionCustomIcon
+                          headerTitle={"هنری و آموزشی"}
+                          Id={4}
+                        >
+                          <></>
+                        </AccordionCustomIcon>
+                        <AccordionCustomIcon
+                          headerTitle={"زیبایی و آرایشی"}
+                          Id={5}
+                        >
+                          <></>
+                        </AccordionCustomIcon>
+                        <AccordionCustomIcon headerTitle={"خدمات"} Id={6}>
+                          <></>
+                        </AccordionCustomIcon>
+                      </div>
                     </div>
-                    <div className="flex flex-col">
-                      <AccordionCustomIcon
-                        headerTitle={"رستوران و کافی‌شاپ"}
-                        Id={1}
-                      >
-                        <></>
-                      </AccordionCustomIcon>
-                      <AccordionCustomIcon
-                        headerTitle={"تفریحی و ورزشی"}
-                        Id={2}
-                      >
-                        <></>
-                      </AccordionCustomIcon>
-                      <AccordionCustomIcon
-                        headerTitle={"پزشکی و سلامت"}
-                        Id={3}
-                      >
-                        <></>
-                      </AccordionCustomIcon>
-                      <AccordionCustomIcon
-                        headerTitle={"هنری و آموزشی"}
-                        Id={4}
-                      >
-                        <></>
-                      </AccordionCustomIcon>
-                      <AccordionCustomIcon
-                        headerTitle={"زیبایی و آرایشی"}
-                        Id={5}
-                      >
-                        <></>
-                      </AccordionCustomIcon>
-                      <AccordionCustomIcon
-                        headerTitle={"خدمات"}
-                        Id={6}
-                      >
-                        <></>
-                      </AccordionCustomIcon>
-                    </div>
-                  </div>
-                </Drawer>
+                  </Drawer>
+                </ThemeProvider>
               </div>
               <Link className="block" to={"/home"}>
                 <div className="flex items-center justify-center gap-2 xl:gap-4">
@@ -397,19 +374,21 @@ const RootLayout: React.FC = () => {
                 <Magnifier />
               </div>
               <div className="hidden xl:flex xl:items-center xl:justify-center gap-4">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-lg font-semibold text-[#8754AF]">
-                    خرید گیفت کارد
-                  </span>
-                  <Gift />
-                </div>
+                <Link className="cursor-pointer" to={"/BuySubscription"}>
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-lg font-semibold text-[#8754AF]">
+                      خرید گیفت کارد
+                    </span>
+                    <Gift />
+                  </div>
+                </Link>
                 <Link to="/ProfileOne">
-                <Button
-                  className="py-2 rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white"
-                  placeholder={undefined}
-                >
-                  ورود
-                </Button>
+                  <Button
+                    className="py-2 rounded-lg border-[3px] border-solid border-[#8754AF] text-lg font-semibold text-[#8754AF] hover:!bg-white bg-white"
+                    placeholder={undefined}
+                  >
+                    ورود
+                  </Button>
                 </Link>
                 <Link to="/Application">
                   <Button
@@ -428,180 +407,75 @@ const RootLayout: React.FC = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="w-full flex items-center justify-between">
               <div className="w-full flex items-center justify-center gap-5">
-                <Flowbite theme={{ theme: customTheme }}>
-                  <Dropdown
-                    inline={true}
-                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
-                    trigger="hover"
-                    label="رستوران و کافی‌شاپ"
-                    dismissOnClick={false}
-                  >
-                    <div
-                      style={{
-                        backgroundImage: `url(${closeUpOne})`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                      className="bg-cover h-72 bottom-1"
-                    >
-                      <DropdownItem className="w-48">رستوران</DropdownItem>
-                      <DropdownItem className="w-48">فست فود</DropdownItem>
-                      <DropdownItem className="w-48">کافی شاپ</DropdownItem>
-                      <DropdownItem className="w-48">باربیکیو</DropdownItem>
-                      <DropdownItem className="w-48">صبحانه</DropdownItem>
-                      <DropdownItem className="w-48">بیرون بر</DropdownItem>
-                    </div>
-                  </Dropdown>
-                  <Dropdown
-                    inline={true}
-                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
-                    trigger="hover"
-                    label="تفریحی و ورزشی"
-                    dismissOnClick={false}
-                  >
-                    <div
-                      style={{
-                        backgroundImage: `url(${funMenu})`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                      className="bg-cover h-72 bottom-1"
-                    >
-                      <DropdownItem className="w-48">
-                        استخر و پارک‌های آبی
-                      </DropdownItem>
-                      <DropdownItem className="w-48">
-                        تفریحی و سرگرمی
-                      </DropdownItem>
-                      <DropdownItem className="w-48">
-                        باشگاه‌های ورزشی
-                      </DropdownItem>
-                      <DropdownItem className="w-48">گردشگری</DropdownItem>
-                    </div>
-                  </Dropdown>
-                  <Dropdown
-                    inline={true}
-                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
-                    trigger="hover"
-                    label="پزشکی و سلامت"
-                    dismissOnClick={false}
-                  >
-                    <div
-                      style={{
-                        backgroundImage: `url(${medicalMenu})`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                      className="bg-cover h-72 bottom-1"
-                    >
-                      <DropdownItem className="w-48">
-                        لیزر موهای زائد
-                      </DropdownItem>
-                      <DropdownItem className="w-48">
-                        زیبایی و جوانسازی
-                      </DropdownItem>
-                      <DropdownItem className="w-48">زیبایی صورت</DropdownItem>
-                      <DropdownItem className="w-48">
-                        لاغری و تناسب اندام
-                      </DropdownItem>
-                      <DropdownItem className="w-48">کاشت مو</DropdownItem>
-                      <DropdownItem className="w-48">
-                        عمل‌های جراحی
-                      </DropdownItem>
-                    </div>
-                  </Dropdown>
-                  <Dropdown
-                    inline={true}
-                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
-                    trigger="hover"
-                    label="هنری و آموزشی"
-                    dismissOnClick={false}
-                  >
-                    <div
-                      style={{
-                        backgroundImage: `url(${ArtAndEduMenu})`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                      className="bg-cover h-72 bottom-1"
-                    >
-                      <DropdownItem className="w-48">
-                        آتلیه و خدمات چاپ
-                      </DropdownItem>
-                      <DropdownItem className="w-48">آموزشی</DropdownItem>
-                    </div>
-                  </Dropdown>
-                  <Dropdown
-                    inline={true}
-                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
-                    trigger="hover"
-                    label="زیبایی و آرایشی"
-                    dismissOnClick={false}
-                  >
-                    <div
-                      style={{
-                        backgroundImage: `url(${beautyMenu})`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                      className="bg-cover h-72 bottom-1"
-                    >
-                      <DropdownItem className="w-48">خدمات پوست</DropdownItem>
-                      <DropdownItem className="w-48">
-                        خدمات و کاشت ناخن
-                      </DropdownItem>
-                      <DropdownItem className="w-48">زیبایی صورت</DropdownItem>
-                      <DropdownItem className="w-48">خدمات مو</DropdownItem>
-                      <DropdownItem className="w-48">اسپا و ماساژ</DropdownItem>
-                      <DropdownItem className="w-48">
-                        خدمات زیبایی و مجلسی
-                      </DropdownItem>
-                      <DropdownItem className="w-48">آرایش دائم</DropdownItem>
-                      <DropdownItem className="w-48">
-                        آرایش مردانه و کودکانه
-                      </DropdownItem>
-                    </div>
-                  </Dropdown>
-                  <Dropdown
-                    inline={true}
-                    className="absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80"
-                    trigger="hover"
-                    label="خدمات"
-                    dismissOnClick={false}
-                  >
-                    <div
-                      style={{
-                        backgroundImage: `url(${servicesMenu})`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                      className="bg-cover h-72 bottom-1"
-                    >
-                      <DropdownItem className="w-48">
-                        تشریفات، مراسم و گل
-                      </DropdownItem>
-                      <DropdownItem className="w-48">
-                        خدمات حفاظت و امنیت
-                      </DropdownItem>
-                      <DropdownItem className="w-48">کارواش</DropdownItem>
-                    </div>
-                  </Dropdown>
-                </Flowbite>
-              </div>
-              <div className="relative">
-                <input
-                  type="search"
-                  id="location-search"
-                  className="hidden w-80 xl:block rounded-[10px] py-2.5 px-5 z-20 text-sm text-gray-900 bg-gray-50 border-2 border-[#8754AF] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                  placeholder="جستجو (مرکز خدماتی، رستوران، استخر و ...)"
-                  required
+                <FlowbiteDropdown
+                  url={closeUpOne}
+                  lable="رستوران و کافی‌شاپ"
+                  list={[
+                    "رستوران",
+                    "فست فود",
+                    "کافی شاپ",
+                    "باربیکیو",
+                    "صبحانه",
+                    "بیرون بر",
+                  ]}
                 />
-                <button
-                  type="submit"
-                  className="xl:block absolute top-0 end-0 h-full p-2 text-sm font-medium text-purple-700 rounded-e-lg hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800"
-                >
-                  <Magnifier />
-                </button>
+                <FlowbiteDropdown
+                  url={funMenu}
+                  lable="تفریحی و ورزشی"
+                  list={[
+                    "استخر و پارک‌های آبی",
+                    "تفریحی و سرگرمی",
+                    "باشگاه‌های ورزشی",
+                    "گردشگری",
+                  ]}
+                />
+                <FlowbiteDropdown
+                  url={medicalMenu}
+                  lable="پزشکی و سلامت"
+                  list={[
+                    "لیزر موهای زائد",
+                    "زیبایی و جوانسازی",
+                    "زیبایی صورت",
+                    "لاغری و تناسب اندام",
+                    "کاشت مو",
+                    "عمل‌های جراحی",
+                  ]}
+                />
+                <FlowbiteDropdown
+                  url={ArtAndEduMenu}
+                  lable="هنری و آموزشی"
+                  list={["آتلیه و خدمات چاپ", "آموزشی"]}
+                />
+                <FlowbiteDropdown
+                  url={beautyMenu}
+                  lable="زیبایی و آرایشی"
+                  list={[
+                    "خدمات پوست",
+                    "خدمات و کاشت ناخن",
+                    "زیبایی صورت",
+                    "خدمات مو",
+                    "اسپا و ماساژ",
+                    "خدمات زیبایی و مجلسی",
+                    "آرایش دائم",
+                    "آرایش مردانه و کودکانه",
+                  ]}
+                />
+                <FlowbiteDropdown
+                  url={servicesMenu}
+                  lable="خدمات"
+                  list={[
+                    "تشریفات، مراسم و گل",
+                    "خدمات حفاظت و امنیت",
+                    "کارواش",
+                  ]}
+                />
+              </div>
+              <div className="w-auto">
+                <Input
+                  placeholder="جستجو (مرکز خدماتی، رستوران، استخر و ...)"
+                  ClassName="hidden w-80 xl:block rounded-[10px] py-2.5 px-5 z-20 text-sm text-gray-900 bg-gray-50 border-2 !border-[#8754AF] focus:ring-blue-500 focus:border-blue-500"
+                  Icon={Magnifier}
+                />
               </div>
             </div>
           </div>
